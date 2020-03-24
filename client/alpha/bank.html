@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>MEHCPL Finance</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="css/mdb.min.css">
+  <link rel="stylesheet" href="css/jquery.loadingModal.min.css">
+  <!-- Your custom styles (optional) -->
+  <style>
+    .color-blue{
+        color : blue;
+    }
+    .color-red{
+        color : red;
+    }
+    .hide{
+      display : none;
+    }
+    img.logo{
+      width : 50px;
+    }
+    .text-black{
+      color:black;
+    }
+    img.landing{
+      width : 100%;
+    }
+    
+  </style>
+</head>
+
+<body class="fixed-sn white-skin">
+
+  <!-- Main Navigation -->
+  <header>
+
+    <!-- Sidebar navigation -->
+    <!-- fixed class is added to -->
+    <!--div id="slide-out" class="side-nav sn-bg-4 fixed"-->
+    <div id="slide-out" class="side-nav sn-bg-4 fixed">
+      <ul class="custom-scrollbar">
+
+        <!-- Logo -->
+        <!--li class="logo-sn waves-effect py-3">
+          <div class="text-center">
+            <a href="#" class="pl-0"><img src="img/mdb-transaprent-noshadows.png"></a>
+          </div>
+        </li-->
+        <li class="logo-sn waves-effect py-3">
+          <div class="text-center">
+            <a href="#" class="pl-0"><img src="img/mdb-transaprent-noshadows.png"></a>
+          </div>
+        </li>
+
+        <!-- Logo -->
+        <li class="logo-sn waves-effect py-3">
+          <div class="text-center">
+            <h4 class="text-black">MEHPCL</h4>
+          </div>
+        </li>
+
+        <!-- Search Form -->
+        <!--li>
+          <form class="search-form" role="search">
+            <div class="md-form mt-0 waves-light">
+              <input type="text" class="form-control py-2" placeholder="Search">
+            </div>
+          </form>
+        </li-->
+
+        <!-- Side navigation links -->
+
+
+        <li>
+        
+          <ul class="collapsible collapsible-accordion">
+
+            <!--li>
+              <a class="collapsible-header waves-effect arrow-r">
+                <i class="w-fa fas fa-tachometer-alt"></i>Bank<i class="fas fa-angle-down rotate-icon"></i>
+              </a>
+              <div class="collapsible-body">
+                <ul>
+                  <li>
+                    <a href="../dashboards/v-1.html" class="waves-effect">Accout 1</a>
+                  </li>
+                  <li>
+                    <a href="../dashboards/v-2.html" class="waves-effect">Account 2</a>
+                  </li>
+                </ul>
+              </div>
+            </li-->
+
+            <!--li>
+              <a class="collapsible-header waves-effect arrow-r">
+                <i class="w-fa fas fa-tachometer-alt"></i>Titles<i class="fas fa-angle-down rotate-icon"></i>
+              </a>
+              <div class="collapsible-body">
+                <ul>
+                  <li>
+                    <a href="../dashboards/v-1.html" class="waves-effect">Title 1</a>
+                  </li>
+                  <li>
+                    <a href="../dashboards/v-2.html" class="waves-effect">Title 2</a>
+                  </li>
+                </ul>
+              </div>
+            </li-->
+
+            
+
+            <!-- Simple link -->
+            <li>
+              <a href="#bankSection" class="collapsible-header waves-effect"><i
+                  class="w-fa fas fa-tachometer-alt"></i>Bank</a>
+            </li>
+            <li>
+              <a href="#currencySection" class="collapsible-header waves-effect"><i
+                  class="w-fa fas fa-tachometer-alt"></i>Currency</a>
+            </li>
+            <li>
+              <a href="#accountSection" class="collapsible-header waves-effect"><i
+                  class="w-fa fas fa-tachometer-alt"></i>Account</a>
+            </li>
+            <li>
+              <a href="#authSection" class="collapsible-header waves-effect"><i
+                  class="w-fa fas fa-tachometer-alt"></i>Auth</a>
+            </li>
+            <li>
+              <a href="#titleSection" class="collapsible-header waves-effect"><i
+                  class="w-fa fas fa-tachometer-alt"></i>Title</a>
+            </li>
+            <li>
+              <a href="#financeSection" class="collapsible-header waves-effect"><i
+                  class="w-fa fas fa-tachometer-alt"></i>Finance</a>
+            </li>
+            <li>
+              <a href="#trialSection" class="collapsible-header waves-effect"><i
+                  class="w-fa fas fa-tachometer-alt"></i>Trial</a>
+            </li>
+            <li>
+              <a href="#profitAndLoseSection" class="collapsible-header waves-effect"><i
+                  class="w-fa fas fa-tachometer-alt"></i>Profit and Balance</a>
+            </li>
+            <li>
+              <a href="#balanceSheetSection" class="collapsible-header waves-effect"><i
+                  class="w-fa fas fa-tachometer-alt"></i>Balance Sheet</a>
+            </li>
+            <li>
+              <a href="#dashboardSection" class="collapsible-header waves-effect"><i
+                  class="w-fa fas fa-tachometer-alt"></i>Dashboard</a>
+            </li>
+
+
+          </ul>
+        </li>
+      </ul>
+      <div class="sidenav-bg mask-strong"></div>
+    </div>
+    <!-- Sidebar navigation -->
+
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg scrolling-navbar double-nav">
+
+      <!-- SideNav slide-out button -->
+      <div class="float-left">
+        <a href="#" data-activates="slide-out" class="button-collapse"><i class="fas fa-bars"></i></a>
+      </div>
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumb-dn mr-auto">
+        <p>MEHPCL Finance</p>
+      </div>
+
+      <div class="d-flex change-mode">
+
+        <!--div class="ml-auto mb-0 mr-3 change-mode-wrapper">
+          <button class="btn btn-outline-black btn-sm" id="dark-mode">Change Mode</button>
+        </div-->
+
+        <!-- Navbar links -->
+        <ul class="nav navbar-nav nav-flex-icons ml-auto">
+
+          <!-- Dropdown -->
+          <!--li class="nav-item dropdown notifications-nav">
+            <a class="nav-link dropdown-toggle waves-effect" id="navbarDropdownMenuLink" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <span class="badge red">3</span> <i class="fas fa-bell"></i>
+              <span class="d-none d-md-inline-block">အသိပေးချက်များ</span>
+            </a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">
+                <i class="far fa-money-bill-alt mr-2" aria-hidden="true"></i>
+                <span>အမြတ်ငွေ သွင်းခြင်း</span>
+                <span class="float-right"><i class="far fa-clock" aria-hidden="true"></i> ၁၃ မိနစ်</span>
+              </a>
+              <a class="dropdown-item" href="#">
+                <i class="far fa-money-bill-alt mr-2" aria-hidden="true"></i>
+                <span>New order received</span>
+                <span class="float-right"><i class="far fa-clock" aria-hidden="true"></i> 33 min</span>
+              </a>
+              <a class="dropdown-item" href="#">
+                <i class="fas fa-chart-line mr-2" aria-hidden="true"></i>
+                <span>Your campaign is about to end</span>
+                <span class="float-right"><i class="far fa-clock" aria-hidden="true"></i> 53 min</span>
+              </a>
+            </div>
+          </li-->
+          <li class="nav-item">
+            <a class="nav-link waves-effect"><i class="fas fa-envelope"></i> <span
+                class="clearfix d-none d-sm-inline-block">Contact</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect"><i class="far fa-comments"></i> <span
+                class="clearfix d-none d-sm-inline-block">Manual</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle waves-effect" href="#" id="userDropdown" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-user"></i> <span class="clearfix d-none d-sm-inline-block">Profile</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+              <a class="dropdown-item" href="#">Logout</a>
+              <a class="dropdown-item" href="#">Profile</a>
+            </div>
+          </li>
+
+        </ul>
+        <!-- Navbar links -->
+
+      </div>
+
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Fixed button -->
+    <!--div class="fixed-action-btn clearfix d-none d-xl-block" style="bottom: 45px; right: 24px;">
+
+      <a class="btn-floating btn-lg red">
+        <i class="fas fa-pencil-alt"></i>
+      </a>
+
+      <ul class="list-unstyled">
+        <li><a class="btn-floating red"><i class="fas fa-star"></i></a></li>
+        <li><a class="btn-floating yellow darken-1"><i class="fas fa-user"></i></a></li>
+        <li><a class="btn-floating green"><i class="fas fa-envelope"></i></a></li>
+        <li><a class="btn-floating blue"><i class="fas fa-shopping-cart"></i></a></li>
+      </ul>
+
+    </div-->
+    <!-- Fixed button -->
+
+  </header>
+  <!-- Main Navigation -->
+
+  <!-- Main layout -->
+  <main>
+
+    <div class="container-fluid">
+    
+      <!-- Section: Dashboard -->
+      <section id="dashboardSection">
+
+        <!-- Card -->
+        <div class="" style="padding:50px">
+              
+              <!-- report card -->
+        <!-- Grid row -->
+        <div class="row">
+
+          <!-- Grid column -->
+          <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+
+            <!-- Card -->
+            <div class="card card-cascade cascading-admin-card">
+
+              <!-- Card Data -->
+              <div class="admin-up">
+                <i data-toggle="modal" data-target="#newFinancialModal" class="far fa-money-bill-alt primary-color mr-3 z-depth-2 pointer"></i>
+                <div class="data">
+                  <p class="font-weight-bold text-uppercase">Income</p>
+                  <h4 class="font-weight-bold dark-grey-text" style="font-color:#161e2c;">20 USD</h4>
+                  <h4 class=" dark-grey-text">35 Euro</h4>
+                  <h4 class=" dark-grey-text">23 MMK</h4>
+                </div>
+              </div>
+
+              <!-- Card content -->
+              <div class="card-body card-body-cascade">
+                <div class="progress mb-3">
+                  <div class="progress-bar bg-primary" role="progressbar" style="width: 25%" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="card-text">Amount(s) are described in Million</p>
+              </div>
+
+            </div>
+            <!-- Card -->
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+
+            <!-- Card -->
+            <div class="card card-cascade cascading-admin-card">
+
+              <!-- Card Data -->
+              <div class="admin-up">
+                <i data-toggle="modal" data-target="#newFinancialModal"  class="fas fa-chart-line warning-color mr-3 z-depth-2 pointer"></i>
+                <div class="data">
+                  <p class="text-uppercase">Expense</p>
+                  <h4 class="font-weight-bold dark-grey-text">12 USD</h4>
+                  <h4 class="font-weight-bold dark-grey-text">21 Euro</h4>
+                  <h4 class="font-weight-bold dark-grey-text">32 MMK</h4>
+                </div>
+              </div>
+
+              <!-- Card content -->
+              <div class="card-body card-body-cascade">
+                <div class="progress mb-3">
+                  <div class="progress-bar red accent-2" role="progressbar" style="width: 25%" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="card-text">Amount(s) are described in Million</p>
+              </div>
+
+            </div>
+            <!-- Card -->
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-xl-3 col-md-6 mb-md-0 mb-4">
+
+            <!-- Card -->
+            <div class="card card-cascade cascading-admin-card">
+
+              <!-- Card Data -->
+              <div class="admin-up">
+                <i data-toggle="modal" data-target="#newFinancialModal"  class="fas fa-chart-pie light-blue lighten-1 mr-3 z-depth-2 pointer"></i>
+                <div class="data">
+                  <p class="text-uppercase">Balance</p>
+                  <h4 class="font-weight-bold dark-grey-text">56 USD</h4>
+                  <h4 class="font-weight-bold dark-grey-text">65 Euro</h4>
+                  <h4 class="font-weight-bold dark-grey-text">45 MMK</h4>
+                </div>
+              </div>
+
+              <!-- Card content -->
+              <div class="card-body card-body-cascade">
+                <div class="progress mb-3">
+                  <div class="progress-bar red accent-2" role="progressbar" style="width: 75%" aria-valuenow="75"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="card-text">Amount(s) are described in Billion</p>
+              </div>
+
+            </div>
+            <!-- Card -->
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-xl-3 col-md-6 mb-0">
+
+            <!-- Card -->
+            <div class="card card-cascade cascading-admin-card">
+
+              <!-- Card Data -->
+              <div class="admin-up">
+                <i data-toggle="modal" data-target="#newFinancialModal"  class="fas fa-chart-bar red accent-2 mr-3 z-depth-2 pointer"></i>
+                <div class="data">
+                  <p class="text-uppercase">Accounts</p>
+                  <h4 class="font-weight-bold dark-grey-text">4 USD</h4>
+                  <h4 class="font-weight-bold dark-grey-text">4 Euro</h4>
+                  <h4 class="font-weight-bold dark-grey-text">14 MMK</h4>
+                </div>
+              </div>
+
+              <!-- Card content -->
+              <div class="card-body card-body-cascade">
+                <div class="progress mb-3">
+                  <div class="progress-bar bg-primary" role="progressbar" style="width: 25%" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="card-text">There are registered in (3) Banks</p>
+              </div>
+
+            </div>
+            <!-- Card -->
+
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+        <br><br><br>
+            <div class="card card-cascade narrower z-depth-0">
+
+              <div
+                class="view view-cascade gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+
+                <div>
+                  <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2"><i
+                      class="fas fa-th-large mt-0"></i></button>
+                  <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2"><i
+                      class="fas fa-columns mt-0"></i></button>
+                </div>
+
+                <a href="" class="white-text mx-3">Bank Accouts</a>
+
+                <div>
+                  <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2"><i
+                      class="fas fa-pencil-alt mt-0"></i></button>
+                  <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2"><i
+                      class="fas fa-eraser mt-0"></i></button>
+                  <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2"><i
+                      class="fas fa-info-circle mt-0"></i></button>
+                </div>
+
+              </div>
+
+              <div class="px-4">
+
+                <div class="table-responsive">
+
+                  <!--Table-->
+                  <table class="table table-hover mb-0" id="titleRowDashboardTable">
+
+                    <!-- Table head -->
+                    <thead>
+                      <tr>
+                          <th>No<i class="fas fa-sort ml-1"></i></th>
+                          <th class="th-lg"><a>Name<i class="fas fa-sort ml-1"></i></a></th>
+                          <th class="th-lg"><a>Balance<i class="fas fa-sort ml-1"></i></a></th>
+                          <th class="th-lg"><a>Income<i class="fas fa-sort ml-1"></i></a></th>
+                          <th class="th-lg"><a>Expense<i class="fas fa-sort ml-1"></i></a></th>
+                          <th class="th-lg"><a>Currency<i class="fas fa-sort ml-1"></i></a></th>
+                          <th class="th-lg"><a>Detail</a></th>
+                      </tr>
+
+                    </thead>
+                    <!-- Table head -->
+
+                    <!-- Table body -->
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>2000 1000 139 570</td>
+                        <td>350,152</td>
+                        <td>520,456</td>
+                        <td>520,456</td>
+                        <td>MMK</td>
+                        <td><a  data-toggle="modal" data-target="#fluidModalTopWarningDemo"><i class="fas fa-th-large mt-0"></i></a></td>
+                      </tr>
+                      
+                    </tbody>
+                    <!-- Table body -->
+
+                  </table>
+                  <!-- Table -->
+
+                </div>
+
+                <hr class="my-0">
+
+                <!-- Bottom Table UI -->
+                <div class="d-flex justify-content-between">
+
+                  <!-- Name -->
+
+                  <!-- Pagination -->
+                  <nav class="my-4">
+                    <ul class="pagination pagination-circle pg-blue mb-0">
+
+
+                    </ul>
+                  </nav>
+                  <!-- Pagination -->
+
+                </div> 
+                <!-- Bottom Table UI -->
+
+              </div>
+
+            </div>
+
+
+        <!-- Full Height Modal Top Warning Demo -->
+        <div class="modal fade top" id="fluidModalTopWarningDemo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+          aria-hidden="true" data-backdrop="false">
+          <div class="modal-dialog modal-full-height modal-top modal-notify modal-info" role="document">
+            <!-- Content -->
+            <div class="modal-content">
+              <!-- Header -->
+              <div class="modal-header">
+                <p class="heading lead">Account 2000 10000 139 570 : MWD Bank : USD</p>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
+              </div>
+
+              <!-- Body -->
+              <div class="modal-body">
+                <div class="text-center">
+                  <i class="fas fa-cash fa-4x mb-3 animated rotateIn"></i>
+                </div>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>Description</th>
+                      <th>Amount</th>
+                      <th>Income/Expense</th>
+                      <th>Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>No(73) Factory Profit for Jan 2019</td>
+                      <td>232,000</td>
+                      <td>Income</td>
+                      <td>2020-03-19</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Factory 11 Profit for Feb  2019</td>
+                      <td>13,232</td>
+                      <td>Income</td>
+                      <td>2020-03-12</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Factory 41 Machine 2</td>
+                      <td>13,000</td>
+                      <td>Expense</td>
+                      <td>2020-03-12</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>MEHPCL Company Head Office</td>
+                      <td>234,000</td>
+                      <td>Expense</td>
+                      <td>2020-03-12</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>Gandama Whole Scale Center</td>
+                      <td>685,000</td>
+                      <td>Expense</td>
+                      <td>2020-03-12</td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>Army RUM</td>
+                      <td>735,000</td>
+                      <td>Income</td>
+                      <td>2020-03-12</td>
+                    </tr>
+                    <tr>
+                      <td>7</td>
+                      <td>Factory 34 Expense</td>
+                      <td>343,000</td>
+                      <td>Expense</td>
+                      <td>2020-03-12</td>
+                    </tr>
+                    <tr>
+                      <td>8</td>
+                      <td>Factory 16 Profit</td>
+                      <td>343,000</td>
+                      <td>Income</td>
+                      <td>2020-03-12</td>
+                    </tr>
+                    <tr>
+                      <td>9</td>
+                      <td>Factory 73 Profit</td>
+                      <td>322,000</td>
+                      <td>Income</td>
+                      <td>2020-03-12</td>
+                    </tr>
+                    <tr>
+                      <td>10</td>
+                      <td>Factory 134 Profit</td>
+                      <td>332,000</td>
+                      <td>Income</td>
+                      <td>2020-03-12</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Footer -->
+              <div class="modal-footer">
+                <a type="button" class="btn btn-outline-info waves-effect" data-dismiss="modal">Close</a>
+              </div>
+            </div>
+            <!-- Content -->
+          </div>
+        </div>
+        <!-- Full Height Modal Top Warning Demo -->
+
+
+        </div>
+        <!-- Card -->
+
+      </section>
+      <!-- Section: Dashboard -->
+    
+      <!-- Section: Landing -->
+      <section id="landingSection">
+
+        <!-- Card -->
+        <div class="card" style="padding:50px">
+              <img src="img/landing.jpg" alt="Landing Logo" class="landing">
+        </div>
+        <!-- Card -->
+
+      </section>
+      <!-- Section: Landing -->
+
+      <!-- Section: Bank Section -->
+      <section id="bankSection">
+
+        <!-- Card -->
+        <div class="card" style="padding:50px">
+            <div class="card-body">
+
+
+            <!--img src='img/mdb-transaprent-noshadows.png' class='animated slow flash infinite' alt='Transparent MDB Logo'>
+            Getting Bank data from server <span  class="animated bounce infinite" > loading.... </span-->
+
+
+            <h4>Bank List</h4>
+            <table class="table" id="bankTable">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Bank</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>MWD Bank</td>
+                        <td><a data-toggle="modal" data-target="#newBankModal"><i class="fas fa-edit color-blue"></i></a></td>
+                        <td><a href="#"><i class="fas fa-trash color-red"></i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button id="newBankButton" class="btn btn-primary" data-toggle="modal" data-target="#newBankModal">+ New Bank</button>
+            </div>
+        </div>
+        <!-- Card -->
+
+      </section>
+      <!-- Section: Bank Section -->
+      
+      <!-- Section: Currency Section -->
+      <section id="currencySection">
+
+        <!-- Card -->
+        <div class="card" style="padding:50px">
+            <div class="card-body">
+            
+            <h4>Currency List</h4>
+            <table class="table" id="currencyTable">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Currency</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>MMK</td>
+                        <td><a data-toggle="modal" data-target="#newCurrencyModal"><i class="fas fa-edit color-blue"></i></a></td>
+                        <td><a href="#"><i class="fas fa-trash color-red"></i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button id="newCurrencyButton" class="btn btn-primary" data-toggle="modal" data-target="#newCurrencyModal">+ New Currency</button>
+            </div>
+        </div>
+        <!-- Card -->
+
+      </section>
+      <!-- Section: Currency Section -->
+
+      <!-- Section: Account Section -->
+      <section id="accountSection">
+
+        <!-- Card -->
+        <div class="card" style="padding:50px">
+            <div class="card-body">
+            
+            <h4>Account List</h4>
+            <table class="table" id="accountTable">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Account Name</th>
+                        <th>Balance</th>
+                        <th>Opening Date</th>
+                        <th>Currency</th>
+                        <th>Bank</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>MWD MMK 1</td>
+                        <td>Balance</td>
+                        <td>Opening Date</td>
+                        <td>MMK</td>
+                        <td>MWD</td>
+                        <td><a data-toggle="modal" data-target="#newAccountModal"><i class="fas fa-edit color-blue"></i></a></td>
+                        <td><a href="#"><i class="fas fa-trash color-red"></i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button id="newAccountButton" class="btn btn-primary" data-toggle="modal" data-target="#newAccountModal">+ New Account</button>
+            </div>
+        </div>
+        <!-- Card -->
+
+      </section>
+      <!-- Section: Account Section -->
+
+      <!-- Section: Auth Section -->
+      <section id="authSection">
+
+        <!-- Card -->
+        <div class="card" style="padding:50px">
+            <div class="card-body">
+            
+            <h4>Auth List</h4>
+            <table class="table" id="authTable">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Person</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Director</td>
+                        <td><a data-toggle="modal" data-target="#newAuthModal"><i class="fas fa-edit color-blue"></i></a></td>
+                        <td><a href="#"><i class="fas fa-trash color-red"></i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button id="newAuthButton" class="btn btn-primary" data-toggle="modal" data-target="#newAuthModal">+ New Auth</button>
+            </div>
+        </div>
+        <!-- Card -->
+
+      </section>
+      <!-- Section: Auth Section -->
+
+      <!-- Section: Title Section -->
+      <section id="titleSection">
+
+        <!-- Card -->
+        <div class="card" style="padding:50px">
+            <div class="card-body">
+            
+            <h4>Title List</h4>
+            <table class="table" id="titleTable">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Title Name</th>
+                        <th>Balance</th>
+                        <th>Total Income</th>
+                        <th>Total Expense</th>
+                        <th>Currency</th>
+                        <th>Opening Date</th>
+                        <th>Final Calculation</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Title 1</td>
+                        <td>balance</td>
+                        <td>total_income</td>
+                        <td>total_expense</td>
+                        <td>MMK</td>
+                        <td>opening_date</td>
+                        <td>Profit</td>
+                        <td><a data-toggle="modal" data-target="#newTitleModal"><i class="fas fa-edit color-blue"></i></a></td>
+                        <td><a href="#"><i class="fas fa-trash color-red"></i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button id="newTitleButton" class="btn btn-primary" data-toggle="modal" data-target="#newTitleModal">+ New Title</button>
+            </div>
+        </div>
+        <!-- Card -->
+
+      </section>
+      <!-- Section: Title Section -->
+
+
+      <!-- Section: Finance Section -->
+      <section id="financeSection">
+
+        <!-- Card -->
+        <div class="card" style="padding:50px">
+            <div class="card-body">
+            
+            <h4>Finance List</h4>
+            <table class="table table-responsive" id="financeTable">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Ops</th>
+                        <th>Title</th>
+                        <th>Account</th>
+                        <!--th>Exchange Rate</th-->
+                        <th>Created Date</th>
+                        <th>Payment Method</th>
+                        <th>Payment Data</th>
+                        <th>Auth</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>No</td>
+                        <td>Description</td>
+                        <td>Amount + Currency</td>
+                        <td>Ops</td>
+                        <td>Title</td>
+                        <td>Account</td>
+                        <td>Exchange Rate + Equalvalent MMK (or) JUST Hide the column</td>
+                        <td>Created Date</td>
+                        <td>Payment Method</td>
+                        <td>Payment Data</td>
+                        <td>Auth</td>
+                        <td><a data-toggle="modal" data-target="#newFinanceModal" ><i class="fas fa-edit color-blue edit"></i></a></td>
+                        <td><a href="#"><i class="fas fa-trash color-red delete"></i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button id="newFinanceButton" class="btn btn-primary" data-toggle="modal" data-target="#newFinanceModal">+ New Finance</button>
+            </div>
+        </div>
+        <!-- Card -->
+
+      </section>
+      <!-- Section: Finance Section -->
+
+
+      <!-- Section: Trail Section -->
+      <section id="trialSection">
+
+        <!-- Card -->
+        <div class="card" style="padding:50px">
+            <div class="card-body">
+            
+            <h4>Trail Section</h4>
+            
+                <form id="trailCalculateForm" action="#">
+
+              <!-- Grid row -->
+              <div class="row">
+               <div class="col-xl-4 col-md-4">
+                  
+									<div class="md-form"> <i class="fas fa-envelope prefix"></i>
+										<input type="date" class="form-control datepicker" name="start_date" id="trailStartDateInput" required>
+										<label for="trailStartDateInput">Start Date</label>
+									</div>
+                </div>
+
+
+                  
+               <div class="col-xl-4 col-md-4">
+									<div class="md-form"> <i class="fas fa-envelope prefix"></i>
+										<input type="date" class="form-control datepicker" name="end_date" id="trailEndDateInput" required>
+										<label for="trailEndDateInput">End Date</label>
+									</div>
+                </div>
+
+
+                <!-- Grid column -->
+                <!--div class="col-xl-3 col-md-6">
+
+                  <div class="md-form">
+										<select class="mdb-select colorful-select dropdown-info mx-2 md-form mt-3 md-dropdown" name="department" id='gopd_hospital_military_personnel_input' required>
+											<option value="" disabled selected>-- Choose Income/Expense --</option>
+											<option value="all_hospital">Income</option>
+											<option value="all_hospital">Expense</option>
+										</select>
+									</div>
+
+                </div-->
+                <!-- Grid column -->
+
+
+                  <!--form class="form-inline mt-2 ml-2" action="#">
+                    <div class="form-group md-form mt-2">
+                      <input type="submit" class="btn-primary" value="Calculate">
+                    </div>
+                  </form-->
+               <div class="col-xl-4 col-md-4">
+                  <div class="md-form">
+                    <button id="trailCalculateButton" type="submit" class="btn btn-primary waves-effect waves-light">
+                    <i class="w-fa fas fa-tachometer-alt"></i>  Calculate Trail</button>
+                  </div>
+                </div>
+
+                </div>
+
+
+                </form>
+              </div>
+              <!-- Grid row -->
+
+
+
+
+            <table class="table " id="trailTable">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Account / Title</th>
+                        <th>Total Income</th>
+                        <th>Total Expense</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td colspan="4">Choose start date and end date to calculate trail </td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+        <!-- Card -->
+
+      </section>
+      <!-- Section: Trail Section -->
+
+
+      <!-- Section: Profit and Lose  Section -->
+      <section id="profitAndLoseSection">
+
+        <!-- Card -->
+        <div class="card" style="padding:50px">
+            <div class="card-body">
+            
+            <h4>Profit and Lose Section</h4>
+            
+                <form id="profitAndloseCalculateForm" action="#">
+
+              <!-- Grid row -->
+              <div class="row">
+               <div class="col-xl-4 col-md-4">
+                  
+									<div class="md-form"> <i class="fas fa-envelope prefix"></i>
+										<input type="date" class="form-control datepicker" name="start_date" id="profitAndLoseStartDateInput" required>
+										<label for="profitAndLoseStartDateInput">Start Date</label>
+									</div>
+                </div>
+
+
+                  
+               <div class="col-xl-4 col-md-4">
+									<div class="md-form"> <i class="fas fa-envelope prefix"></i>
+										<input type="date" class="form-control datepicker" name="end_date" id="profitAndLoseEndDateInput" required>
+										<label for="profitAndLoseEndDateInput">End Date</label>
+									</div>
+                </div>
+               <div class="col-xl-4 col-md-4">
+                  <div class="md-form">
+                    <button id="profitAndLoseCalculateButton" type="submit" class="btn btn-primary waves-effect waves-light">
+                    <i class="w-fa fas fa-tachometer-alt"></i>  Calculate Profit and Balance</button>
+                  </div>
+                </div>
+
+                </div>
+
+
+                </form>
+              </div>
+              <!-- Grid row -->
+
+
+            <!--
+
+              ဘာတွေ တွက်ကြမလဲ
+            -->
+
+            <table class="table " id="profitAndLoseTable">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Account / Title</th>
+                        <th>Total Expense</th>
+                        <th>Total Income</th>
+                        <th>Profit / Lose</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td colspan="6">Choose start date and end date to calculate profit and lose </td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+        <!-- Card -->
+
+      </section>
+      <!-- Section: Profit and Lose Section -->
+
+
+      <!-- Section: Balance Sheet  Section -->
+      <section id="balanceSheetSection">
+
+        <!-- Card -->
+        <div class="card" style="padding:50px">
+            <div class="card-body">
+            
+            <h4>Balance Sheet Section</h4>
+            
+                <form id="balanceSheetCalculateForm" action="#">
+
+              <!-- Grid row -->
+              <div class="row">
+               <div class="col-xl-4 col-md-4">
+                  
+									<div class="md-form"> <i class="fas fa-envelope prefix"></i>
+										<input type="date" class="form-control datepicker" name="start_date" id="balanceSheetStartDateInput" required>
+										<label for="balanceSheetStartDateInput">Start Date</label>
+									</div>
+                </div>
+
+
+                  
+               <div class="col-xl-4 col-md-4">
+									<div class="md-form"> <i class="fas fa-envelope prefix"></i>
+										<input type="date" class="form-control datepicker" name="end_date" id="balanceSheetEndDateInput" required>
+										<label for="balanceSheetEndDateInput">End Date</label>
+									</div>
+                </div>
+               <div class="col-xl-4 col-md-4">
+                  <div class="md-form">
+                    <button id="balanceSheetCalculateButton" type="submit" class="btn btn-primary waves-effect waves-light">
+                    <i class="w-fa fas fa-tachometer-alt"></i>  Calculate Balance Sheet</button>
+                  </div>
+                </div>
+
+                </div>
+
+
+                </form>
+              </div>
+              <!-- Grid row -->
+
+
+            <!--
+
+              ဘာတွေ တွက်ကြမလဲ
+            -->
+
+            <table class="table " id="balanceSheetTable">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Account / Title</th>
+                        <th>Total Expense</th>
+                        <th>Total Income</th>
+                        <th>Balance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td colspan="6">Choose start date and end date to balance sheet </td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+        <!-- Card -->
+
+      </section>
+      <!-- Section: Profit and Lose Section -->
+
+
+    </div>
+    <!-- container  -->
+
+  </main>
+  <!-- Main layout -->
+
+  <!-- Footer -->
+  <footer class="page-footer pt-0 mt-5 rgba-stylish-light">
+
+    <!-- Copyright -->
+    <div class="footer-copyright py-3 text-center">
+      <div class="container-fluid">
+        © 2020 Copyright: <a href="#" target="_blank"> MEHPCL </a>
+      </div>
+    </div>
+
+  </footer>
+  <!-- Footer -->
+
+
+    <!-- Modals -->
+
+        <!-- New Bank Modal -->
+        <div class="modal fade" id="newBankModal" tabindex="-1" role="dialog"
+        aria-hidden="true">
+          <div class="modal-dialog" role="document">
+          </div>
+        </div>
+        <!-- New Bank Modal : End-->
+
+        
+
+        <!-- New Currency Modal -->
+        <div class="modal fade" id="newCurrencyModal" tabindex="-1" role="dialog"
+        aria-hidden="true">
+          <div class="modal-dialog" role="document">
+          </div>
+        </div>
+        <!-- New Currency Modal : End-->
+
+        
+
+        <!-- New Account Modal -->
+        <div class="modal fade" id="newAccountModal" tabindex="-1" role="dialog"
+        aria-hidden="true">
+          <div class="modal-dialog" role="document">
+          </div>
+        </div>
+        <!-- New Currency Modal : End-->
+
+        
+
+        <!-- New Auth Modal -->
+        <div class="modal fade" id="newAuthModal" tabindex="-1" role="dialog"
+        aria-hidden="true">
+          <div class="modal-dialog" role="document">
+          </div>
+        </div>
+        <!-- New Auth Modal : End-->
+
+        
+
+        <!-- New Title Modal -->
+        <div class="modal fade" id="newTitleModal" tabindex="-1" role="dialog"
+        aria-hidden="true">
+          <div class="modal-dialog" role="document">
+          </div>
+        </div>
+        <!-- New Title Modal : End-->
+
+        
+
+        
+
+        <!-- New Finance Modal -->
+        <div class="modal fade" id="newFinanceModal" tabindex="-1" role="dialog"
+        aria-hidden="true">
+          <div class="modal-dialog" role="document">
+          </div>
+        </div>
+        <!-- New Finance Modal : End-->
+
+
+
+
+    <!-- Modals -->
+
+    <!-- Templates -->
+
+    <!-- Bank Row Template -->
+    <script type="text/x-template" id="bankRowTemplate">
+      <td><%= serial_no %></td>
+      <td><%= name %></td>
+      <td><a data-toggle="modal" data-target="#newBankModal"><i class="fas fa-edit color-blue edit"></i></a></td>
+      <td><a href="#"><i class="fas fa-trash color-red delete"></i></a></td>
+	  </script>
+    <!-- Bank Row Template -->
+
+    <!-- Bank Edit Template -->
+    <script type="text/x-template" id="bankEditTemplate">
+                <div class="modal-header">
+                    <h5 class="modal-title">+ New Bank</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                <!-- new bank modal form -->
+                
+                    <!-- Form -->
+                    <form class="text-center bankEditForm" id="bankEditForm" style="color: #757575;" action="#">
+                        <!-- bank id -->
+                        <div class="md-form mt-3 hide">
+                            <input type="text" id="bankIdInput" name="id" value="<%= id %>" class="form-control" >
+                            <label for="bankIdInput">ID</label>
+                        </div>
+
+                        <!-- Bank Name -->
+                        <div class="md-form mt-3">
+                            <input type="text" id="bankNameInput" name="name" value="<%= name %>" class="form-control"  required>
+                            <label for="bankNameInput">Name</label>
+                        </div>
+                    
+                        <!-- Submit button -->
+                        <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Submit</button>
+                    </form>
+                    <!-- Form -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+    </script>
+    
+    
+
+    <!-- Currency Row Template -->
+    <script type="text/x-template" id="currencyRowTemplate">
+      <td><%= serial_no %></td>
+      <td><%= name %></td>
+      <td><a data-toggle="modal" data-target="#newCurrencyModal"><i class="fas fa-edit color-blue edit"></i></a></td>
+      <td><a href="#"><i class="fas fa-trash color-red delete"></i></a></td>
+	  </script>
+    <!-- Currency Row Template -->
+
+    <!-- Currency Edit Template -->
+    <script type="text/x-template" id="currencyEditTemplate">
+      
+                <div class="modal-header">
+                    <h5 class="modal-title">+ New Currency</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                
+                    <form class="text-center currencyEditForm" id="currencyEditForm" style="color: #757575;" action="#">
+                        
+                        <div class="md-form mt-3 hide">
+                            <input type="text" id="currencyIdInput" name="id" value="<%= id %>" class="form-control" >
+                            <label for="currencyIdInput">ID</label>
+                        </div>
+
+                        <div class="md-form mt-3">
+                            <input type="text" id="currencyNameInput" name="name" value="<%= name %>" class="form-control"  required>
+                            <label for="currencyNameInput">Name</label>
+                        </div>
+                    
+                        
+                        <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Submit</button>
+                    </form>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+	  </script>
+    <!-- Currency Edit Template -->
+
+
+    <!-- Account Row Template -->
+    <script type="text/x-template" id="accountRowTemplate">
+      <td><%= serial_no %></td>
+      <td><%= name %></td>
+      <% var mul = exchange_rate * balance %>
+      <td  data-toggle="tooltip" data-placement="top" title="Equavalent MMK For <%= currency.name %>  in Exchange Rate (<%= exchange_rate %>) is <%= mul %> "><%= balance %>  <%= currency.name %></td>
+
+      <!--td><%= balance %></td-->
+      <td><%= opening_date %></td>
+      <td><%= currency.name %></td>
+      <td><%= bank.name %></td>
+      <td><a data-toggle="modal" data-target="#newAccountModal"><i class="fas fa-edit color-blue edit"></i></a></td>
+      <td><a href="#"><i class="fas fa-trash color-red delete"></i></a></td>
+	  </script>
+    <!-- Account Row Template -->
+
+    <!-- Account Edit Template -->
+    <script type="text/x-template" id="accountEditTemplate">
+      
+                <div class="modal-header">
+                    <h5 class="modal-title">+ New Account</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                
+                    <form class="text-center accountEditForm" id="accountEditForm" style="color: #757575;" action="#">
+                        
+                        <div class="md-form mt-3 hide">
+                            <input type="text" id="accountIdInput" name="id" value="<%= id %>" class="form-control" >
+                            <label for="accountIdInput">ID</label>
+                        </div>
+
+                        <div class="md-form mt-3">
+                            <input type="text" id="accountNameInput" name="name" value="<%= name %>" class="form-control"  required>
+                            <label for="accountNameInput">Name</label>
+                        </div>
+
+                        <div class="md-form mt-3">
+                            <input type="number" id="accountBalanceInput" name="balance" value="<%= balance %>" class="form-control"  required>
+                            <label for="accountBalanceInput">Balance</label>
+                        </div>
+
+                        <br>
+
+                        <div class="md-form mt-3">
+                            <input type="date" id="accountOpeningDateInput" name="opening_date" value="<%= opening_date %>" class="form-control"  required>
+                            <label for="accountOpeningDateInput">Opening Date</label>
+                        </div>
+                        
+                        <select class="mdb-select colorful-select dropdown-primary md-form" id="accountCurrencySelect" required>
+                            <option value="" disabled>Currency</option>
+                            <% _.each(currencys, function(c,i){ %>
+                              <!-- option><%= c.id %> # <%= currency_id %> </option-->
+                              <% if (c.id == currency_id){ %>
+                                <!--option>match</option-->
+                                <option value='<%= c.id %>' selected> <%= c.name %> </li>
+                              <% } else { %>
+                                <!--option>does not match</option-->
+                                <option value='<%= c.id %>'> <%= c.name %> </li>
+                              <% } %>
+                            <% })%>
+                        </select>
+
+                        <div class="md-form mt-3">
+                            <input type="number" id="accountExchangeRateInput" name="balance" value="<%= exchange_rate %>" class="form-control"  required>
+                            <label for="accountExchangeRateInput">Exchange Rate</label>
+                        </div>
+                        
+                        
+                        <select class="mdb-select colorful-select dropdown-primary md-form" id="accountBankSelect" required>
+                            <option value="" disabled>Bank</option>
+                            <% _.each(banks, function(b,i){ %>
+                              <% if (b.id == bank_id){ %>
+                                <option value='<%= b.id %>' selected> <%= b.name %> </li>
+                              <% } else { %>
+                                <option value='<%= b.id %>'> <%= b.name %> </li>
+                              <% } %>
+                            <% })%>
+                        </select>
+
+
+                        <!-- here we have to use select :P -->
+                        <!-- We have to access global currency list using global_config.bank -->
+                        <!-- Here we have to show underscore loop and condition -->
+                        
+                    
+                        
+                        <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Submit</button>
+                    </form>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+	  </script>
+    <!-- Account Edit Template -->
+
+
+    
+
+    <!-- Auth Row Template -->
+    <script type="text/x-template" id="authRowTemplate">
+      <td><%= serial_no %></td>
+      <td><%= name %></td>
+      <td><a data-toggle="modal" data-target="#newAuthModal"><i class="fas fa-edit color-blue edit"></i></a></td>
+      <td><a href="#"><i class="fas fa-trash color-red delete"></i></a></td>
+	  </script>
+    <!-- Auth Row Template -->
+
+    <!-- Auth Edit Template -->
+    <script type="text/x-template" id="authEditTemplate">
+      
+                <div class="modal-header">
+                    <h5 class="modal-title">+ New Auth</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                
+                    <form class="text-center authEditForm" id="authEditForm" style="color: #757575;" action="#">
+                        
+                        <div class="md-form mt-3 hide">
+                            <input type="text" id="authIdInput" name="id" value="<%= id %>" class="form-control" >
+                            <label for="authIdInput">ID</label>
+                        </div>
+
+                        <div class="md-form mt-3">
+                            <input type="text" id="authNameInput" name="name" value="<%= name %>" class="form-control"  required>
+                            <label for="authNameInput">Name</label>
+                        </div>
+                    
+                        
+                        <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Submit</button>
+                    </form>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+	  </script>
+    <!-- Auth Edit Template -->
+
+
+    <!-- Title Row Template -->
+    <script type="text/x-template" id="titleRowTemplate">
+      <td><%= serial_no %></td>
+      <td><%= name %></td>
+
+      <% var mul = exchange_rate * balance %>
+      <td  data-toggle="tooltip" data-placement="top" title="Equavalent MMK For <%= currency.name %>  in Exchange Rate (<%= exchange_rate %>) is <%= mul %> "><%= balance %>  <%= currency.name %></td>
+
+      <!--td><%= balance %></td-->
+      <td><%= total_income %></td>
+      <td><%= total_expense %></td>
+      <td><%= currency.name %></td>
+      <td><%= opening_date %></td>
+      <td><%= calculation %></td>
+      <td><a data-toggle="modal" data-target="#newTitleModal"><i class="fas fa-edit color-blue edit"></i></a></td>
+      <td><a href="#"><i class="fas fa-trash color-red delete"></i></a></td>
+	  </script>
+    <!-- Title Row Template -->
+
+    <!-- Title Edit Template -->
+    <script type="text/x-template" id="titleEditTemplate">
+                <div class="modal-header">
+                    <h5 class="modal-title">+ New Title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                
+                    <form class="text-center titleEditForm" id="titleEditForm" style="color: #757575;" action="#">
+                        
+                        <div class="md-form mt-3 hide">
+                            <input type="text" id="titleIdInput" name="id" value="<%= id %>" class="form-control" >
+                            <label for="titleIdInput">ID</label>
+                        </div>
+
+                        <div class="md-form mt-3">
+                            <input type="text" id="titleNameInput" name="name" value="<%= name %>" class="form-control"  required>
+                            <label for="titleNameInput">Name</label>
+                        </div>
+
+                        <div class="md-form mt-3">
+                            <input type="number" id="titleBalanceInput" name="balance" value="<%= balance %>" class="form-control"  required>
+                            <label for="titleBalanceInput">Balance</label>
+                        </div>
+
+                        <div class="md-form mt-3">
+                            <input type="number" id="titleTotalIncomeInput" name="total_income" value="<%= total_income %>" class="form-control"  required>
+                            <label for="titleTotalIncomeInput">Total Income</label>
+                        </div>
+
+                        <div class="md-form mt-3">
+                            <input type="number" id="titleTotalExpenseInput" name="total_expense" value="<%= total_expense %>" class="form-control"  required>
+                            <label for="titleTotalExpenseInput">Total Expense</label>
+                        </div>
+                        
+                        <select class="mdb-select colorful-select dropdown-primary md-form" id="titleCurrencySelect" required name="currency">
+                            <option value="" disabled>Currency</option>
+                            <% _.each(currencys, function(c,i){ %>
+                              <!-- option><%= c.id %> # <%= currency_id %> </option-->
+                              <% if (c.id == currency_id){ %>
+                                <!--option>match</option-->
+                                <option value='<%= c.id %>' selected> <%= c.name %> </li>
+                              <% } else { %>
+                                <!--option>does not match</option-->
+                                <option value='<%= c.id %>'> <%= c.name %> </li>
+                              <% } %>
+                            <% })%>
+                        </select>
+
+                        <div class="md-form mt-3">
+                            <input type="number" id="titleExchangeRateInput" name="exchange_rate" value="<%= exchange_rate %>" class="form-control"  required>
+                            <label for="titleExchangeRateInput">Exchange Rate</label>
+                        </div>
+
+                        <br>
+                        <div class="md-form mt-3">
+                            <input type="date" id="titleOpeningDateInput" name="opening_date" value="<%= opening_date %>" class="form-control"  required>
+                            <label for="titleOpeningDateInput">Opening Date</label>
+                        </div>
+
+                        <!-- here we should use the calculation in third party, so , we can use dynamic calculation :D , in this case, just fixed input as drop down-->    
+                        
+                        <select class="mdb-select colorful-select dropdown-primary md-form" id="titleCalculationSelect" required name="calculation">
+                            <option value="" disabled>Calculation</option>
+                            <option value="profit" <% if(calculation == "profit"){%>selected <% }%> >Profit</option>
+                            <option value="balance" <% if(calculation == "balance"){%>selected <% }%> >Balance</option>
+                        </select>
+                        
+                    
+                        
+                        <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Submit</button>
+                    </form>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+	  </script>
+    <!-- Title Edit Template -->
+
+
+    <!-- Finance Row Template -->
+    <script type="text/x-template" id="financeRowTemplate">
+      <% var mul = exchange_rate * amount %>
+                        <td><%= serial_no %></td>
+                        <td><%= description %></td>
+                        <td  data-toggle="tooltip" data-placement="top"
+                          title="Equavalent MMK For <%= title.currency.name %>  in Exchange Rate (<%= exchange_rate %>) is <%= mul %> "><%= amount %>  <%= title.currency.name %></td>
+                        <td><%= ops %></td>
+                        <td><%= title.name %></td>
+                        <td><%= account.name %></td>
+                        <!-- we need to check this column show or hide according to currency-->
+                        <!--td><%= exchange_rate %> +  <%= mul %></td-->
+                        <td><%= created_date %></td>
+                        <td><%= payment_method %></td>
+                        <td><%= payment_data %></td>
+                        <td><%= auth.name %></td>
+                        <td><a data-toggle="modal" data-target="#newFinanceModal" ><i class="fas fa-edit color-blue edit"></i></a></td>
+                        <td><a href="#"><i class="fas fa-trash color-red delete"></i></a></td>
+	  </script>
+    <!-- Finance Row Template -->
+
+    <!-- Finance Edit Template -->
+    <script type="text/x-template" id="financeEditTemplate">
+                <div class="modal-header">
+                    <h5 class="modal-title">+ New Finance</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                
+                    <form class="text-center financeEditForm" id="financeEditForm" style="color: #757575;" action="#">
+                        
+                        <div class="md-form mt-3 hide">
+                            <input type="text" id="financeIdInput" name="id" value="<%= id %>" class="form-control" >
+                            <label for="financeIdInput">ID</label>
+                        </div>
+
+                        <div class="md-form mt-3">
+                            <input type="text" id="financeDescriptionInput" name="description" value="<%= description %>" class="form-control"  required>
+                            <label for="financeDescriptionInput">Description</label>
+                        </div>
+                        
+                        <select class="mdb-select colorful-select dropdown-primary md-form" id="financeAccountSelect" required name="account"  searchable="Search Accounts..">
+                            <option value="" disabled>-- Account --</option>
+                            <% _.each(accounts, function(a,i){ %>
+                              <!-- option><%= a.id %> # <%= account_id %> </option-->
+                              <% if (a.id == account_id){ %>
+                                <!--option>match</option-->
+                                <option value='<%= a.id %>' selected> <%= a.name %> </li>
+                              <% } else { %>
+                                <!--option>does not match</option-->
+                                <option value='<%= a.id %>'> <%= a.name %> </li>
+                              <% } %>
+                            <% })%>
+                        </select>
+                        
+                        <select class="mdb-select colorful-select dropdown-primary md-form" id="financeTitleSelect" required name="title"  searchable="Search Titles..">
+                            <option value="" disabled>-- Title --</option>
+                            <% _.each(titles, function(t,i){ %>
+                              <!-- option><%= t.id %> # <%= title_id %> </option-->
+                              <% if (t.id == title_id){ %>
+                                <!--option>match</option-->
+                                <option value='<%= t.id %>' selected> <%= t.name %> </li>
+                              <% } else { %>
+                                <!--option>does not match</option-->
+                                <option value='<%= t.id %>'> <%= t.name %> </li>
+                              <% } %>
+                            <% })%>
+                        </select>
+
+                        <div class="md-form mt-3">
+                            <input type="number" id="financeAmountInput" name="amount" value="<%= amount %>" class="form-control"  required>
+                            <label for="financeAmountInput">Amount</label>
+                        </div>  
+
+                        <div class="md-form mt-3">
+                            <input type="number" id="financeExchangeRateInput" name="exchange_rate" value="<%= exchange_rate %>" class="form-control"  required>
+                            <label for="financeExchangeRateInput">Exchange Rate</label>
+                        </div> 
+                        
+
+
+                            <select class="mdb-select colorful-select dropdown-primary md-form" id="financeOpsSelect" required name="ops">
+                                <option value="" disabled>-- Operation --</option>
+                                <option value="income" <% if(ops == "income"){%>selected <% }%> >Income</option>
+                                <option value="expense" <% if(ops == "expense"){%>selected <% }%> >Expense</option>
+                            </select>
+
+                        <div class="md-form mt-3">
+                            <input type="date" id="financeCreatedDateRateInput" name="created_date" value="<%= created_date %>" class="form-control datepicker"  required>
+                            <label for="financeCreatedDateRateInput">Date</label>
+                        </div> 
+                        
+                        <select class="mdb-select colorful-select dropdown-primary md-form" id="financePaymentMethodSelect" required name="ops">
+                            <option value="" disabled>-- Payment Method --</option>
+                            <option value="cheque" <% if(payment_method == "cheque"){%>selected <% }%> >Cheque</option>
+                            <option value="cash" <% if(payment_method == "cash"){%>selected <% }%> >Cash</option>
+                        </select>
+
+                        <div class="md-form mt-3">
+                            <input type="text" id="financePaymentDataInput" name="payment_data" value="<%= payment_data %>" class="form-control"  required>
+                            <label for="financePaymentDataInput">Payment Data</label>
+                        </div>
+                        
+                        <select class="mdb-select colorful-select dropdown-primary md-form" id="financeAuthSelect" required name="auth">
+                            <option value="" disabled>-- Auth --</option>
+                            <% _.each(auths, function(t,i){ %>
+                              <!-- option><%= t.id %> # <%= title_id %> </option-->
+                              <% if (t.id == title_id){ %>
+                                <!--option>match</option-->
+                                <option value='<%= t.id %>' selected> <%= t.name %> </li>
+                              <% } else { %>
+                                <!--option>does not match</option-->
+                                <option value='<%= t.id %>'> <%= t.name %> </li>
+                              <% } %>
+                            <% })%>
+                        </select>
+                        
+                        <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Submit</button>
+                    </form>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+	  </script>
+    <!-- Finance Edit Template -->
+
+    <!-- Title Row For Dashboard Template -->
+    <script type="text/x-template" id="titleRowDashboardTemplate">
+    
+                        <th scope="row"><%= serial_no %></th>
+                        <td><%= name %></td>
+                        <% var balance_in_mmk = exchange_rate * balance %>
+                        <% var total_income_in_mmk = exchange_rate * total_income %>
+                        <% var total_expense_in_mmk = exchange_rate * total_income %>
+                        <td  data-toggle="tooltip" data-placement="top" title="Equavalent MMK For <%= currency.name %>  in Exchange Rate (<%= exchange_rate %>) is <%= balance_in_mmk %> "><%= balance %></td>
+                        <td  data-toggle="tooltip" data-placement="top" title="Equavalent MMK For <%= currency.name %>  in Exchange Rate (<%= exchange_rate %>) is <%= total_income_in_mmk %> "><%= total_income %></td>
+                        <td  data-toggle="tooltip" data-placement="top" title="Equavalent MMK For <%= currency.name %>  in Exchange Rate (<%= exchange_rate %>) is <%= total_expense_in_mmk %> "><%= total_expense %></td>
+                        <td><%= currency.name %></td>
+                        <td><a  data-toggle="modal" data-target="#fluidModalTopWarningDemo"><i class="fas fa-th-large mt-0"></i></a></td>
+	  </script>
+    <!-- Title Row Template -->
+
+
+
+    <!-- Templates -->
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+
+    <!-- backbone -->
+    <script src="js/modernizr.js"></script>
+	<script src="js/underscore.min.js"></script>
+	<script src="js/backbone.js"></script>
+	<script src="js/jquery.loadingModal.min.js"></script>
+  <script src="js/socket.io.js"></script>
+
+  <!-- Material Design Initializations -->
+  <script>
+    // SideNav Initialization
+
+    $(".button-collapse").sideNav({
+      //breakpoint: 3000, // Breakpoint for button collapse
+      //closeOnClick: true,
+    });
+    var container = document.querySelector('.custom-scrollbar');
+    var ps = new PerfectScrollbar(container, {
+      wheelSpeed: 2,
+      wheelPropagation: true,
+      minScrollbarLength: 20
+    });
+
+    // Data Picker Initialization
+    $('.datepicker').pickadate({
+      format: 'yyyy/mm/dd',
+      formatSubmit: 'yyyy/mm/dd',
+    });
+
+    // Material Select Initialization
+    $(document).ready(function () {
+      $('.mdb-select').material_select();
+    });
+
+    // Tooltips Initialization
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+
+  </script>
+
+  <script src="js/script.js"></script>
+    <!-- financial script -->
+    <script>
+    </script>
+
+
+
+</body>
+
+</html>

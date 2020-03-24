@@ -1,0 +1,16 @@
+Prototype with Test.php
+database schema and insert by hard coding
+ or 
+ normal model, api and post man method :D 
+
+2020-03-11
+အကြွေးကျန်
+
+Account မှာ 
+- balance (int) field ထည့်ရန်
+- UI မှာ လိုက်ပြင်ရန်
+<select >  မှာ required အလုပ်မလုပ်တာ ပြန်ရှင်းရန်
+
+
+TDL ကို mark down နဲ့ရေးရန်
+ပြန်ကြည့်တဲ့အချိန် စနစ်တကျ ရှိတာပေါ့

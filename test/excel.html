@@ -1,0 +1,86 @@
+<style>
+    table, tr, td {
+        border : 1px solid;
+    }
+</style>
+<table id="tblData">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Country</th>
+    </tr>
+    <tr>
+        <td>John Doe</td>
+        <td>john@gmail.com</td>
+        <td>USA</td>
+    </tr>
+    <tr>
+        <td>Michael Addison</td>
+        <td>michael@gmail.com</td>
+        <td>UK</td>
+    </tr>
+    <tr>
+        <td>Sam Farmer</td>
+        <td>sam@gmail.com</td>
+        <td>France</td>
+    </tr>
+</table>
+<br><br>
+<button onclick="exportTableToExcel('tblData')">Export Table Data To Excel File</button>
+<button onclick="printTheTable()">Normal Print</button>
+<button onclick="printTheTableById('tblData')">Print by ID</button>
+<script>
+function exportTableToExcel(tableID, filename = ''){
+    var downloadLink;
+    var dataType = 'application/vnd.ms-excel';
+    var tableSelect = document.getElementById(tableID);
+    var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+    
+    // Specify file name
+    filename = filename?filename+'.xls':'excel_data.xls';
+    
+    // Create download link element
+    downloadLink = document.createElement("a");
+    
+    document.body.appendChild(downloadLink);
+    
+    if(navigator.msSaveOrOpenBlob){
+        var blob = new Blob(['\ufeff', tableHTML], {
+            type: dataType
+        });
+        navigator.msSaveOrOpenBlob( blob, filename);
+    }else{
+        // Create a link to the file
+        downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+    
+        // Setting the file name
+        downloadLink.download = filename;
+        
+        //triggering the function
+        downloadLink.click();
+    }
+}
+function normalPrint(data)
+{
+    var newwindow= window.open('','Print-Window');
+	newwindow.document.open();
+	newwindow.document.write("<html><head><title></title><style>body{}table, tr, td {border : 1px solid;}</style></head><body onload='window.print();window.close()'>");
+	newwindow.document.write(data);
+	newwindow.document.write("</body></html>");
+	newwindow.document.close();
+}
+function printTheTable(){
+    var tblData = document.getElementById('tblData');
+    //var data = tblData.outerHTML.replace(/ /g, '%20');
+    var data = tblData.outerHTML;
+    normalPrint(data);
+}
+function printTheTableById(id){
+    console.log("id is ");
+    console.log(id);
+    var tblData = document.getElementById(id);
+    //var data = tblData.outerHTML.replace(/ /g, '%20');
+    var data = tblData.outerHTML;
+    normalPrint(data);
+}
+</script>
