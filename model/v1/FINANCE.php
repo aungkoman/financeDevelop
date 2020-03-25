@@ -89,6 +89,7 @@ class FINANCE{
                 $account->modified_date = $this->finance->modified_date;
 
 
+                // 13. title balance
                 // exchange_rate, opening_date, balance, total_income, total_expense, modified_date
                 $title->balance = $this->finance->title_balance;
                 $title->opening_date = $this->finance->created_date;
@@ -98,9 +99,33 @@ class FINANCE{
                 $title->modified_date = $this->finance->modified_date;
 
 
-                // 13. title balance
 
                 //echo "payment_data is ".$this->finance->payment_data;
+
+                // 14. From : Name
+                $this->finance->from_name = (string) isset($data['from_name']) ? sanitize_str($data['from_name'],"finance->insert : from_name") :  return_fail('finance->insert : from_name is not defined in requested data');
+
+                // 14. From : Company
+                $this->finance->from_company = (string) isset($data['from_company']) ? sanitize_str($data['from_company'],"finance->insert : from_company") :  return_fail('finance->insert : from_company is not defined in requested data');
+
+                // 15. From : Address
+                $this->finance->from_address = (string) isset($data['from_address']) ? sanitize_str($data['from_address'],"finance->insert : from_address") :  return_fail('finance->insert : from_address is not defined in requested data');
+
+                // 17. From : Phone
+                $this->finance->from_phone = (string) isset($data['from_phone']) ? sanitize_str($data['from_phone'],"finance->insert : from_phone") :  return_fail('finance->insert : from_phone is not defined in requested data');
+
+                // 18. To : Name
+                $this->finance->to_name = (string) isset($data['to_name']) ? sanitize_str($data['to_name'],"finance->insert : to_name") :  return_fail('finance->insert : to_name is not defined in requested data');
+
+                // 19. To : Company
+                $this->finance->to_company = (string) isset($data['to_company']) ? sanitize_str($data['to_company'],"finance->insert : to_company") :  return_fail('finance->insert : to_company is not defined in requested data');
+
+                // 20. To : Address
+                $this->finance->to_address = (string) isset($data['to_address']) ? sanitize_str($data['to_address'],"finance->insert : to_address") :  return_fail('finance->insert : to_address is not defined in requested data');
+
+                // 21. To : Phone
+                $this->finance->to_phone = (string) isset($data['to_phone']) ? sanitize_str($data['to_phone'],"finance->insert : to_phone") :  return_fail('finance->insert : to_phone is not defined in requested data');
+                
                 R::begin(); // start the transaction 
                 try{
                         $id = R::store($this->finance); // query 1 : insert finance

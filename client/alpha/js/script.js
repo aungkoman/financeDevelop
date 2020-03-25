@@ -11,6 +11,7 @@
             var titleEndpoint = webserviceUrl+"title/index.php";
             var financeEndpoint = webserviceUrl+"finance/index.php";
             var calculationEndpoint = webserviceUrl+"calculation/index.php";
+            var printEndpoint = webserviceUrl+"print/index.php";
             var bankSerialNo = 1;
             var currencySerialNo = 1;
             var accountSerialNo = 1;
@@ -18,6 +19,16 @@
             var titleSerialNo = 1;
             var financeSerialNo  = 1;
             var calcualtionSerialNo = 1;
+
+            var total_income_mmk = 0;
+            var total_income_usd = 0;
+            var total_income_euro = 0;
+            var total_expense_mmk = 0;
+            var total_expense_usd = 0;
+            var total_expense_euro = 0;
+            var total_balance_mmk = 0;
+            var total_balance_usd = 0;
+            var total_balance_euro = 0;
             
             //var socket_server = 'localhost:5508'; // production server
             var socket_server = window.location.hostname+":5508"; // production server
@@ -754,6 +765,30 @@
                   console.log("account edit ajax is complete");
                 }
             });
+            var AccountViewRowDashboard = Backbone.View.extend({
+                tagName : "tr",
+                className : "",
+                events : {
+                },
+                template: _.template( $('#accountRowDashboardTemplate').html() ),
+                initialize : function(){
+                    this.listenTo(this.model,'destroy',this.destroy)
+                    this.listenTo(this.model,'change',this.change)
+                },
+                render : function(){
+                    var modelData = this.model.toJSON();
+                    this.$el.html(this.template(modelData));
+                    return this;
+                },
+                destroy : function(){
+                    console.log("AccountViewRowDashboard : AccountModel is destroy");
+                    this.remove(); // remove dom
+                },
+                change : function(){
+                    console.log("AccountModel is changed : we're watching from AccountVieRowwDashboard");
+                    this.render(); // update the ui
+                }
+            });
 
             
             
@@ -1236,6 +1271,14 @@
                 defaults:{
                       id : null,
                       serial_no : null,
+                      from_name : null,
+                      from_company : null,
+                      from_address  : null,
+                      from_phone : null,
+                      to_name : null,
+                      to_company : null,
+                      to_address : null,
+                      to_phone : null,
                       ops : null,
                       amount : null,
                       exchange_rate : null,
@@ -1273,7 +1316,8 @@
                 className : "",
                 events : {
                     "click .edit" : "edit",
-                    "click .delete" : "delete"
+                    "click .delete" : "delete",
+                    "click .print" : "print"
                 },
                 template: _.template( $('#financeRowTemplate').html() ),
                 initialize : function(){
@@ -1354,6 +1398,55 @@
                     $("#newFinanceModal > div").html(financeEditView.render().el);
                     $('.mdb-select').materialSelect();
                 },
+                print : function(){
+                    console.log("FinanceViewRow print is clicked on "+this.model.get("description"));
+                    showLoadingModal("Printing....");
+                    // var financeEditView = new FinanceViewEdit({model : this.model});
+                    // $("#newFinanceModal > div").html(financeEditView.render().el);
+                    // $('.mdb-select').materialSelect();
+
+                    // get print form html from server using this.model
+                    // open new window
+                    // ajax part 2 : Data Manipulation
+                    var formdata = new FormData(); // how to get this form
+                    var opsType = "print";
+                    var jwt = "thisIsJwt";
+                    formdata.append("ops_type", opsType);
+                    formdata.append("jwt", jwt);
+                    let jsonObj = this.model.toJSON();
+                    let jsonStr = JSON.stringify(jsonObj);
+                    formdata.append("finance",jsonStr);
+                    console.log(this.model.toJSON());
+                    console.log(jsonStr);
+                    // ajax part 3 : Requesting 
+                      $.ajax({
+                        url: printEndpoint,
+                        type: "post",
+                        data: formdata,
+                        cache: false,
+                        processData: false,
+                        contentType: false,
+                        success: function(response) {
+                          console.log("finance print request success");
+                          console.log(response);
+                          setTimeout(function(){
+                            var newWindow = window.open();
+                            newWindow.document.write(response);
+                            hideLoadingModal();
+                          },1000);
+                        },
+                        error: function(response) {
+                          console.log("finance delete : network error");
+                          console.log(response.responseText);
+                          setTimeout(function(){
+                            hideLoadingModal();
+                          },1000);
+                        }
+                      });
+                      console.log("finance delete ajax is complete");
+
+
+                },
                 destroy : function(){
                     console.log("FinanceViewRow : FinanceModel is destroy");
                     this.remove(); // remove dom
@@ -1415,6 +1508,16 @@
                   var financePaymentDataInput = $("#financePaymentDataInput").val();
                   var financeAuthSelect = $("#financeAuthSelect").val();
 
+                  var financeFromNameInput = $("#financeFromNameInput").val();
+                  var financeFromCompanyInput = $("#financeFromCompanyInput").val();
+                  var financeFromAddressInput = $("#financeFromAddressInput").val();
+                  var financeFromPhoneInput = $("#financeFromPhoneInput").val();
+                  var financeToNameInput = $("#financeToNameInput").val();
+                  var financeToCompanyInput = $("#financeToCompanyInput").val();
+                  var financeToAddressInput = $("#financeToAddressInput").val();
+                  var financeToPhoneInput = $("#financeToPhoneInput").val();
+
+
                   // insert / update
                   if(financeIdInput == ""){
                     console.log("this is new finance");
@@ -1433,6 +1536,15 @@
                   console.log("financePaymentMethodSelect : "+financePaymentMethodSelect);
                   console.log("financePaymentDataInput : "+financePaymentDataInput);
                   console.log("financeAuthSelect : "+financeAuthSelect);
+
+                  console.log("financeFromNameInput : "+financeFromNameInput);
+                  console.log("financeFromCompanyInput : "+financeFromCompanyInput);
+                  console.log("financeFromAddressInput : "+financeFromAddressInput);
+                  console.log("financeFromPhoneInput : "+financeFromPhoneInput);                  
+                  console.log("financeToNameInput : "+financeToNameInput);
+                  console.log("financeToCompanyInput : "+financeToCompanyInput);
+                  console.log("financeToAddressInput : "+financeToAddressInput);
+                  console.log("financeToPhoneInput : "+financeToPhoneInput);
                   
                   formdata.append("ops_type", opsType);
                   formdata.append("jwt", jwt);
@@ -1446,6 +1558,15 @@
                   formdata.append("account", financeAccountSelect);
                   formdata.append("title", financeTitleSelect);
                   formdata.append("auth", financeAuthSelect);
+
+                  formdata.append("from_name", financeFromNameInput);
+                  formdata.append("from_company", financeFromCompanyInput);
+                  formdata.append("from_address", financeFromAddressInput);
+                  formdata.append("from_phone", financeFromPhoneInput);                  
+                  formdata.append("to_name", financeToNameInput);
+                  formdata.append("to_company", financeToCompanyInput);
+                  formdata.append("to_address", financeToAddressInput);
+                  formdata.append("to_phone", financeToPhoneInput);
 
                   // ajax part 3 : request
                   $.ajax({
@@ -1587,7 +1708,6 @@
                 $("#currencyIdInput").focus();
             });
 
-
             // 9. New Account Button Click
             $("#newAccountButton").on("click",function(){
               console.log("newAccountButton is clicked");
@@ -1603,6 +1723,27 @@
               accountSerialNo++;
               var accountView = new AccountViewRow({ model : account });
               $("#accountTable > tbody").append(accountView.render().el);
+
+              var accountDashboardView = new AccountViewRowDashboard({ model : account });
+              $("#accountRowDashboardTable > tbody").append(accountDashboardView.render().el);
+              // update account total income / expense
+              var data = account.toJSON();
+              console.log("data from title json");
+              console.log(data);
+              var currency = data.currency.name;
+              if(currency == "MMK"){
+                total_balance_mmk += parseInt(data.balance);
+                $("#total_balance_mmk").text("MMK : "+total_balance_mmk);
+              }
+              if(currency == "USD"){
+                total_balance_usd += parseInt(data.balance);
+                $("#total_balance_usd").text("USD : "+total_balance_mmk);
+              }
+              if(currency == "EURO"){
+                total_balance_euro += parseInt(data.balance);
+                $("#total_balance_euro").text("Euro : "+total_balance_mmk);
+              }
+
             });
             // 11. Accounts Destroy Listener
             Accounts.on('destroy',function(account){
@@ -1673,6 +1814,8 @@
               var titleViewDashboard = new TitleViewRowDashboard({ model : title });
               $("#titleRowDashboardTable > tbody").append(titleViewDashboard.render().el);
 
+              
+
 
             });
             // 19. Accounts Destroy Listener
@@ -1719,6 +1862,52 @@
               var financeView = new FinanceViewRow({ model : finance });
               $("#financeTable > tbody").append(financeView.render().el);
               $('[data-toggle="tooltip"]').tooltip();
+
+              
+
+              // update title total income / expense
+              var data = finance.toJSON();
+              console.log("data from finance json");
+              console.log(data);
+              var currency = data.title.currency.name;
+              //alert("currency : "+currency);
+              var ops = data.ops;
+              if(currency == "MMK"){
+                if(ops == "income"){
+                  total_income_mmk += parseInt(data.amount);
+                  $("#total_income_mmk").text("MMK : "+total_income_mmk);
+                }
+                if(ops == "expense"){
+                  total_expense_mmk += parseInt(data.amount);
+                  $("#total_expense_mmk").text("MMK : "+total_expense_mmk);
+                }
+              }
+              if(currency == "USD"){
+                if(ops == "income"){
+                  total_income_usd += parseInt(data.amount);
+                  $("#total_income_usd").text("USD : "+total_income_usd);
+                }
+                if(ops == "expense"){
+                  total_expense_usd += parseInt(data.amount);
+                  $("#total_expense_usd").text("USD : "+total_expense_usd);
+                }
+              }
+              if(currency == "EURO"){
+                //alert("here is euro");
+                if(ops == "income"){
+                  total_income_euro += parseInt(data.amount);
+                  $("#total_income_euro").text("Euro : "+total_income_euro);
+                }
+                if(ops == "expense"){
+                  total_expense_euro += parseInt(data.amount);
+                  $("#total_expense_euro").text("Euro : "+total_expense_euro);
+                }
+              }
+
+              
+
+
+
             });
             // 23. Finance Destroy Listener
             Finances.on('destroy',function(finance){
@@ -1742,6 +1931,15 @@
                 $("#financePaymentDataInput").focus();
                 $("#financeAuthSelect").focus();
                 $("#financeDescriptionInput").focus();
+
+                $("#financeFromCompanyInput").focus();
+                $("#financeFromAddressInput").focus();
+                $("#financeFromPhoneInput").focus();
+                $("#financeToNameInput").focus();
+                $("#financeToCompanyInput").focus();
+                $("#financeToAddressInput").focus();
+                $("#financeToPhoneInput").focus();
+                $("#financeFromNameInput").focus();
             });
 
             // 25. Calculate Trail Button Click Listener
@@ -2097,7 +2295,6 @@
               link = "financeSection";
             }
             $("#"+link).show();
-
             console.log('28 has change is starting..');
             $( window ).on( 'hashchange', function( e ) {
               console.log( 'hash changed' );
@@ -2126,6 +2323,9 @@
             $("#authTable > tbody").html("<tr><td colspan='3'>Getting Auth data from server....</td></tr>");
             $("#titleTable > tbody").html("<tr><td colspan='3'>Getting Title data from server....</td></tr>");
             $("#financeTable > tbody").html("<tr><td colspan='3'>Getting Finance data from server....</td></tr>");
+            $("#titleRowDashboardTable > tbody").html("<tr><td colspan='3'><img src='img/mdb-transaprent-noshadows.png' class='animated slow flash infinite' alt='Transparent MDB Logo'> Getting Title data from server...</td></tr>");
+            // accountRowDashboardTable
+            $("#accountRowDashboardTable > tbody").html("<tr><td colspan='3'><img src='img/mdb-transaprent-noshadows.png' class='animated slow flash infinite' alt='Transparent MDB Logo'> Getting Bank Account data from server...</td></tr>");
 
 
             // getting data from server
@@ -2209,6 +2409,8 @@
                 if(response.status){
                   setTimeout(function(){
                     $("#accountTable > tbody").empty();
+                    // $("#accountRowDashboardTable > tbody")
+                    $("#accountRowDashboardTable > tbody").empty();
                     Accounts.add(response.data);
                   },1000);
                 }else{
@@ -2273,6 +2475,7 @@
                 if(response.status){
                   setTimeout(function(){
                     $("#titleTable > tbody").empty();
+                    $("#titleRowDashboardTable > tbody").empty();
                     Titles.add(response.data);
                   },1000);
                 }else{
@@ -2320,6 +2523,9 @@
               }
             });
 
+            // updating report card
+
+
 
             /* socket section */
             socket.on('finance', (data) => {
@@ -2337,7 +2543,7 @@
                 var orgTitle = Titles.find(function(title){
                   return title.get("id") == data.title_id;
                 });
-
+                let msg = "Notification : ";
                 if(orgData === undefined){
                   console.log("financeIdInput id cannot find id "+data.id);
                   msg += data.description+" is added";
@@ -2351,6 +2557,10 @@
                 }
                 toastr.info(msg);
 
+                // we have to update the balance 
+                // since income and expense is calculate via data
+                var currency = data.currency.name;
+                
             });
               
 

@@ -269,145 +269,202 @@
       <!-- Section: Dashboard -->
       <section id="dashboardSection">
 
-        <!-- Card -->
-        <div class="" style="padding:50px">
-              
-              <!-- report card -->
+        <!-- Report Cards-->
         <!-- Grid row -->
         <div class="row">
 
+          <!-- Income Card -->
           <!-- Grid column -->
-          <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+          <div class="col-xl-3 col-md-6 mb-4">
 
-            <!-- Card -->
-            <div class="card card-cascade cascading-admin-card">
+            <!-- Panel -->
+            <div class="card">
 
-              <!-- Card Data -->
-              <div class="admin-up">
-                <i data-toggle="modal" data-target="#newFinancialModal" class="far fa-money-bill-alt primary-color mr-3 z-depth-2 pointer"></i>
-                <div class="data">
-                  <p class="font-weight-bold text-uppercase">Income</p>
-                  <h4 class="font-weight-bold dark-grey-text" style="font-color:#161e2c;">20 USD</h4>
-                  <h4 class=" dark-grey-text">35 Euro</h4>
-                  <h4 class=" dark-grey-text">23 MMK</h4>
-                </div>
+              <div class="card-header white-text primary-color">
+                Income
               </div>
+
+              <h6 class="ml-4 mt-5 font-weight-bold">
+                <i class="fas fa-arrow-up blue-text mr-3" aria-hidden="true"></i>
+                <span class='calculate_span' id="total_income_mmk">MMK :  0</span>
+              </h6>
+              <h6 class="ml-4 mt-5 font-weight-bold">
+                <i class="fas fa-arrow-up blue-text mr-3" aria-hidden="true"></i>
+                <span class='calculate_span' id="total_income_usd">USD :  0</span>
+              </h6>
+              <h6 class="ml-4 mt-5 font-weight-bold">
+                <i class="fas fa-arrow-up blue-text mr-3" aria-hidden="true"></i>
+                <span class='calculate_span' id="total_income_euro">Euro :  0</span>
+              </h6>
+              <!-- Card Data -->
 
               <!-- Card content -->
-              <div class="card-body card-body-cascade">
-                <div class="progress mb-3">
-                  <div class="progress-bar bg-primary" role="progressbar" style="width: 25%" aria-valuenow="25"
-                    aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="card-body">
+
+                <div class="progress">
+
+                  <div class="progress-bar blue" role="progressbar" style="width: 45%" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100">
+
+                  </div>
                 </div>
-                <p class="card-text">Amount(s) are described in Million</p>
+                <!-- Text -->
+                <p class="font-small grey-text">Total Income</p>
               </div>
+              <!-- Card content -->
 
             </div>
-            <!-- Card -->
+            <!-- Panel -->
+
+          </div>
+          <!-- Grid column -->
+          <!-- Income Card -->
+
+          <!-- Expense Card -->
+          <!-- Grid column -->
+          <div class="col-xl-3 col-md-6 mb-4">
+
+            <!-- Panel -->
+            <div class="card">
+
+              <div class="card-header white-text warning-color">
+                Expense
+              </div>
+
+              <h6 class="ml-4 mt-5 font-weight-bold">
+                <i class="fas fa-arrow-up blue-text mr-3" aria-hidden="true"></i>
+                <span class='calculate_span' id="total_expense_mmk">MMK : 0 </span>
+              </h6>
+              <h6 class="ml-4 mt-5 font-weight-bold">
+                <i class="fas fa-arrow-up blue-text mr-3" aria-hidden="true"></i>
+                <span class='calculate_span' id="total_expense_usd">USD :  0</span>
+              </h6>
+              <h6 class="ml-4 mt-5 font-weight-bold">
+                <i class="fas fa-long-arrow-alt-down red-text mr-3" aria-hidden="true"></i>
+                <span class='calculate_span' id="total_expense_euro">Euro : 0 </span>
+              </h6>
+              <!-- Card Data -->
+
+              <!-- Card content -->
+              <div class="card-body">
+
+                <div class="progress">
+
+                  <div class="progress-bar blue" role="progressbar" style="width: 65%" aria-valuenow="65"
+                    aria-valuemin="0" aria-valuemax="100">
+                  </div>
+
+                </div>
+                <!-- Text -->
+                <p class="font-small grey-text">Total Expense</p>
+              </div>
+              <!-- Card content -->
+
+            </div>
+            <!-- Panel -->
 
           </div>
           <!-- Grid column -->
 
+          <!-- Balance Card -->
           <!-- Grid column -->
-          <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+          <div class="col-xl-3 col-md-6 mb-4">
 
-            <!-- Card -->
-            <div class="card card-cascade cascading-admin-card">
+            <!-- Panel -->
+            <div class="card">
 
-              <!-- Card Data -->
-              <div class="admin-up">
-                <i data-toggle="modal" data-target="#newFinancialModal"  class="fas fa-chart-line warning-color mr-3 z-depth-2 pointer"></i>
-                <div class="data">
-                  <p class="text-uppercase">Expense</p>
-                  <h4 class="font-weight-bold dark-grey-text">12 USD</h4>
-                  <h4 class="font-weight-bold dark-grey-text">21 Euro</h4>
-                  <h4 class="font-weight-bold dark-grey-text">32 MMK</h4>
-                </div>
+              <div class="card-header white-text light-blue lighten-1">
+                Balance
               </div>
+
+              <h6 class="ml-4 mt-5 font-weight-bold">
+                <i class="fas fa-long-arrow-alt-down red-text mr-3" aria-hidden="true"></i>
+                <span class='calculate_span' id="total_balance_mmk">MMK : 0</span>
+              </h6>
+              <h6 class="ml-4 mt-5 font-weight-bold">
+                <i class="fas fa-arrow-up blue-text mr-3" aria-hidden="true"></i>
+                <span class='calculate_span' id="total_balance_usd">USD : 0</span>
+              </h6>
+              <h6 class="ml-4 mt-5 font-weight-bold">
+                <i class="fas fa-arrow-up blue-text mr-3" aria-hidden="true"></i>
+                <span class='calculate_span' id="total_balance_euro">Euro : 0</span>
+              </h6>
+              <!-- Card Data -->
 
               <!-- Card content -->
-              <div class="card-body card-body-cascade">
-                <div class="progress mb-3">
-                  <div class="progress-bar red accent-2" role="progressbar" style="width: 25%" aria-valuenow="25"
-                    aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="card-body">
+
+                <div class="progress">
+
+                  <div class="progress-bar red" role="progressbar" style="width: 25%" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100">
+                  </div>
+
                 </div>
-                <p class="card-text">Amount(s) are described in Million</p>
+                <!-- Text -->
+                <p class="font-small grey-text">Total Balance</p>
               </div>
+              <!-- Card content -->
 
             </div>
-            <!-- Card -->
+            <!-- Panel -->
 
           </div>
           <!-- Grid column -->
+          <!-- Balance Card -->
 
+          <!-- Account Information Card-->
           <!-- Grid column -->
-          <div class="col-xl-3 col-md-6 mb-md-0 mb-4">
+          <div class="col-xl-3 col-md-6 mb-4">
 
-            <!-- Card -->
-            <div class="card card-cascade cascading-admin-card">
-
-              <!-- Card Data -->
-              <div class="admin-up">
-                <i data-toggle="modal" data-target="#newFinancialModal"  class="fas fa-chart-pie light-blue lighten-1 mr-3 z-depth-2 pointer"></i>
-                <div class="data">
-                  <p class="text-uppercase">Balance</p>
-                  <h4 class="font-weight-bold dark-grey-text">56 USD</h4>
-                  <h4 class="font-weight-bold dark-grey-text">65 Euro</h4>
-                  <h4 class="font-weight-bold dark-grey-text">45 MMK</h4>
-                </div>
+            <!-- Panel -->
+            <div class="card">
+              <div class="card-header white-text red accent-2">
+                Bank Info
               </div>
+
+              <h6 class="ml-4 mt-5 font-weight-bold">
+                <i class="fas fa-dollar-sign red-text mr-3" aria-hidden="true"></i> 
+                MMK  14
+
+              </h6>
+              <h6 class="ml-4 mt-5 font-weight-bold">
+                <i class="fas fa-dollar-sign red-text mr-3" aria-hidden="true"></i>
+                USD  2
+              </h6>
+              <h6 class="ml-4 mt-5 font-weight-bold">
+                <i class="fas fa-dollar-sign red-text mr-3" aria-hidden="true"></i>
+                Euro  2
+              </h6>
+              <!-- Card Data -->
 
               <!-- Card content -->
-              <div class="card-body card-body-cascade">
-                <div class="progress mb-3">
-                  <div class="progress-bar red accent-2" role="progressbar" style="width: 75%" aria-valuenow="75"
-                    aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="card-body">
+
+                <div class="progress">
+
+                  <div class="progress-bar red" role="progressbar" style="width: 45%" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100">
+                  </div>
+
                 </div>
-                <p class="card-text">Amount(s) are described in Billion</p>
+                <!-- Text -->
+                <p class="font-small grey-text">Finance Info</p>
               </div>
+              <!-- Card content -->
 
             </div>
-            <!-- Card -->
+            <!-- Panel -->
+
 
           </div>
           <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-xl-3 col-md-6 mb-0">
-
-            <!-- Card -->
-            <div class="card card-cascade cascading-admin-card">
-
-              <!-- Card Data -->
-              <div class="admin-up">
-                <i data-toggle="modal" data-target="#newFinancialModal"  class="fas fa-chart-bar red accent-2 mr-3 z-depth-2 pointer"></i>
-                <div class="data">
-                  <p class="text-uppercase">Accounts</p>
-                  <h4 class="font-weight-bold dark-grey-text">4 USD</h4>
-                  <h4 class="font-weight-bold dark-grey-text">4 Euro</h4>
-                  <h4 class="font-weight-bold dark-grey-text">14 MMK</h4>
-                </div>
-              </div>
-
-              <!-- Card content -->
-              <div class="card-body card-body-cascade">
-                <div class="progress mb-3">
-                  <div class="progress-bar bg-primary" role="progressbar" style="width: 25%" aria-valuenow="25"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="card-text">There are registered in (3) Banks</p>
-              </div>
-
-            </div>
-            <!-- Card -->
-
-          </div>
-          <!-- Grid column -->
-
+          <!-- Balance Card -->
         </div>
         <!-- Grid row -->
 
         <br><br><br>
+            <!-- Bank Accounts -->
             <div class="card card-cascade narrower z-depth-0">
 
               <div
@@ -421,6 +478,95 @@
                 </div>
 
                 <a href="" class="white-text mx-3">Bank Accouts</a>
+
+                <div>
+                  <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2"><i
+                      class="fas fa-pencil-alt mt-0"></i></button>
+                  <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2"><i
+                      class="fas fa-eraser mt-0"></i></button>
+                  <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2"><i
+                      class="fas fa-info-circle mt-0"></i></button>
+                </div>
+
+              </div>
+
+              <div class="px-4">
+
+                <div class="table-responsive">
+
+                  <!--Table-->
+                  <table class="table table-hover mb-0" id="accountRowDashboardTable">
+
+                    <!-- Table head -->
+                    <thead>
+                      <tr>
+                          <th>No<i class="fas fa-sort ml-1"></i></th>
+                          <th class="th-lg"><a>Name<i class="fas fa-sort ml-1"></i></a></th>
+                          <th class="th-lg"><a>Balance<i class="fas fa-sort ml-1"></i></a></th>
+                          <th class="th-lg"><a>Bank<i class="fas fa-sort ml-1"></i></a></th>
+                          <th class="th-lg"><a>Detail</a></th>
+                      </tr>
+
+                    </thead>
+                    <!-- Table head -->
+
+                    <!-- Table body -->
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>2000 1000 139 570</td>
+                        <td>350,152</td>
+                        <td>MMK</td>
+                        <td>MWD</td>
+                        <td><a  data-toggle="modal" data-target="#fluidModalTopWarningDemo"><i class="fas fa-th-large mt-0"></i></a></td>
+                      </tr>
+                      
+                    </tbody>
+                    <!-- Table body -->
+
+                  </table>
+                  <!-- Table -->
+
+                </div>
+
+                <hr class="my-0">
+
+                <!-- Bottom Table UI -->
+                <div class="d-flex justify-content-between">
+
+                  <!-- Name -->
+
+                  <!-- Pagination -->
+                  <nav class="my-4">
+                    <ul class="pagination pagination-circle pg-blue mb-0">
+
+
+                    </ul>
+                  </nav>
+                  <!-- Pagination -->
+
+                </div> 
+                <!-- Bottom Table UI -->
+
+              </div>
+
+            </div>
+
+        <br><br><br>
+            <!-- Titles -->
+            <div class="card card-cascade narrower z-depth-0">
+
+              <div
+                class="view view-cascade gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+
+                <div>
+                  <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2"><i
+                      class="fas fa-th-large mt-0"></i></button>
+                  <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2"><i
+                      class="fas fa-columns mt-0"></i></button>
+                </div>
+
+                <a href="" class="white-text mx-3">Titles</a>
 
                 <div>
                   <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2"><i
@@ -499,124 +645,7 @@
             </div>
 
 
-        <!-- Full Height Modal Top Warning Demo -->
-        <div class="modal fade top" id="fluidModalTopWarningDemo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-          aria-hidden="true" data-backdrop="false">
-          <div class="modal-dialog modal-full-height modal-top modal-notify modal-info" role="document">
-            <!-- Content -->
-            <div class="modal-content">
-              <!-- Header -->
-              <div class="modal-header">
-                <p class="heading lead">Account 2000 10000 139 570 : MWD Bank : USD</p>
 
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true" class="white-text">&times;</span>
-                </button>
-              </div>
-
-              <!-- Body -->
-              <div class="modal-body">
-                <div class="text-center">
-                  <i class="fas fa-cash fa-4x mb-3 animated rotateIn"></i>
-                </div>
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th>No</th>
-                      <th>Description</th>
-                      <th>Amount</th>
-                      <th>Income/Expense</th>
-                      <th>Date</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>No(73) Factory Profit for Jan 2019</td>
-                      <td>232,000</td>
-                      <td>Income</td>
-                      <td>2020-03-19</td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Factory 11 Profit for Feb  2019</td>
-                      <td>13,232</td>
-                      <td>Income</td>
-                      <td>2020-03-12</td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Factory 41 Machine 2</td>
-                      <td>13,000</td>
-                      <td>Expense</td>
-                      <td>2020-03-12</td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>MEHPCL Company Head Office</td>
-                      <td>234,000</td>
-                      <td>Expense</td>
-                      <td>2020-03-12</td>
-                    </tr>
-                    <tr>
-                      <td>5</td>
-                      <td>Gandama Whole Scale Center</td>
-                      <td>685,000</td>
-                      <td>Expense</td>
-                      <td>2020-03-12</td>
-                    </tr>
-                    <tr>
-                      <td>6</td>
-                      <td>Army RUM</td>
-                      <td>735,000</td>
-                      <td>Income</td>
-                      <td>2020-03-12</td>
-                    </tr>
-                    <tr>
-                      <td>7</td>
-                      <td>Factory 34 Expense</td>
-                      <td>343,000</td>
-                      <td>Expense</td>
-                      <td>2020-03-12</td>
-                    </tr>
-                    <tr>
-                      <td>8</td>
-                      <td>Factory 16 Profit</td>
-                      <td>343,000</td>
-                      <td>Income</td>
-                      <td>2020-03-12</td>
-                    </tr>
-                    <tr>
-                      <td>9</td>
-                      <td>Factory 73 Profit</td>
-                      <td>322,000</td>
-                      <td>Income</td>
-                      <td>2020-03-12</td>
-                    </tr>
-                    <tr>
-                      <td>10</td>
-                      <td>Factory 134 Profit</td>
-                      <td>332,000</td>
-                      <td>Income</td>
-                      <td>2020-03-12</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <!-- Footer -->
-              <div class="modal-footer">
-                <a type="button" class="btn btn-outline-info waves-effect" data-dismiss="modal">Close</a>
-              </div>
-            </div>
-            <!-- Content -->
-          </div>
-        </div>
-        <!-- Full Height Modal Top Warning Demo -->
-
-
-        </div>
-        <!-- Card -->
 
       </section>
       <!-- Section: Dashboard -->
@@ -857,6 +886,7 @@
                         <th>Payment Data</th>
                         <th>Auth</th>
                         <th>Edit</th>
+                        <th>Print</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
@@ -1147,6 +1177,123 @@
 
 
     <!-- Modals -->
+
+
+        <!-- Full Height Modal Top Warning Demo -->
+        <div class="modal fade top" id="fluidModalTopWarningDemo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+          aria-hidden="true" data-backdrop="false">
+          <div class="modal-dialog modal-full-height modal-top modal-notify modal-info" role="document">
+            <!-- Content -->
+            <div class="modal-content">
+              <!-- Header -->
+              <div class="modal-header">
+                <p class="heading lead">Account 2000 10000 139 570 : MWD Bank : USD</p>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
+              </div>
+
+              <!-- Body -->
+              <div class="modal-body">
+                <div class="text-center">
+                  <i class="fas fa-cash fa-4x mb-3 animated rotateIn"></i>
+                </div>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>Description</th>
+                      <th>Amount</th>
+                      <th>Income/Expense</th>
+                      <th>Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>No(73) Factory Profit for Jan 2019</td>
+                      <td>232,000</td>
+                      <td>Income</td>
+                      <td>2020-03-19</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Factory 11 Profit for Feb  2019</td>
+                      <td>13,232</td>
+                      <td>Income</td>
+                      <td>2020-03-12</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Factory 41 Machine 2</td>
+                      <td>13,000</td>
+                      <td>Expense</td>
+                      <td>2020-03-12</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>MEHPCL Company Head Office</td>
+                      <td>234,000</td>
+                      <td>Expense</td>
+                      <td>2020-03-12</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>Gandama Whole Scale Center</td>
+                      <td>685,000</td>
+                      <td>Expense</td>
+                      <td>2020-03-12</td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>Army RUM</td>
+                      <td>735,000</td>
+                      <td>Income</td>
+                      <td>2020-03-12</td>
+                    </tr>
+                    <tr>
+                      <td>7</td>
+                      <td>Factory 34 Expense</td>
+                      <td>343,000</td>
+                      <td>Expense</td>
+                      <td>2020-03-12</td>
+                    </tr>
+                    <tr>
+                      <td>8</td>
+                      <td>Factory 16 Profit</td>
+                      <td>343,000</td>
+                      <td>Income</td>
+                      <td>2020-03-12</td>
+                    </tr>
+                    <tr>
+                      <td>9</td>
+                      <td>Factory 73 Profit</td>
+                      <td>322,000</td>
+                      <td>Income</td>
+                      <td>2020-03-12</td>
+                    </tr>
+                    <tr>
+                      <td>10</td>
+                      <td>Factory 134 Profit</td>
+                      <td>332,000</td>
+                      <td>Income</td>
+                      <td>2020-03-12</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Footer -->
+              <div class="modal-footer">
+                <a type="button" class="btn btn-outline-info waves-effect" data-dismiss="modal">Close</a>
+              </div>
+            </div>
+            <!-- Content -->
+          </div>
+        </div>
+        <!-- Full Height Modal Top Warning Demo -->
+
 
         <!-- New Bank Modal -->
         <div class="modal fade" id="newBankModal" tabindex="-1" role="dialog"
@@ -1570,7 +1717,8 @@
                         <td><%= payment_data %></td>
                         <td><%= auth.name %></td>
                         <td><a data-toggle="modal" data-target="#newFinanceModal" ><i class="fas fa-edit color-blue edit"></i></a></td>
-                        <td><a href="#"><i class="fas fa-trash color-red delete"></i></a></td>
+                        <td><a><i class="fas fa-print color-blue print"></i></a></td>
+                        <td><a><i class="fas fa-trash color-red delete"></i></a></td>
 	  </script>
     <!-- Finance Row Template -->
 
@@ -1589,6 +1737,46 @@
                         <div class="md-form mt-3 hide">
                             <input type="text" id="financeIdInput" name="id" value="<%= id %>" class="form-control" >
                             <label for="financeIdInput">ID</label>
+                        </div>
+
+                        <div class="md-form mt-3">
+                            <input type="text" id="financeFromNameInput" name="from_name" value="<%= from_name %>" class="form-control"  required>
+                            <label for="financeFromNameInput">FROM : Name</label>
+                        </div>
+
+                        <div class="md-form mt-3">
+                            <input type="text" id="financeFromCompanyInput" name="from_company" value="<%= from_company %>" class="form-control"  required>
+                            <label for="financeFromCompanyInput">FROM : Company</label>
+                        </div>
+
+                        <div class="md-form mt-3">
+                            <input type="text" id="financeFromAddressInput" name="from_address" value="<%= from_address %>" class="form-control"  required>
+                            <label for="financeFromAddressInput">FROM : Address</label>
+                        </div>
+
+                        <div class="md-form mt-3">
+                            <input type="text" id="financeFromPhoneInput" name="from_phone" value="<%= from_phone %>" class="form-control"  required>
+                            <label for="financeFromPhoneInput">FROM : Phone</label>
+                        </div>
+                        
+                        <div class="md-form mt-3">
+                            <input type="text" id="financeToNameInput" name="to_name" value="<%= to_name %>" class="form-control"  required>
+                            <label for="financeToNameInput">To : Name</label>
+                        </div>
+
+                        <div class="md-form mt-3">
+                            <input type="text" id="financeToCompanyInput" name="to_company" value="<%= to_company %>" class="form-control"  required>
+                            <label for="financeToCompanyInput">To : Company</label>
+                        </div>
+
+                        <div class="md-form mt-3">
+                            <input type="text" id="financeToAddressInput" name="to_address" value="<%= to_address %>" class="form-control"  required>
+                            <label for="financeToAddressInput">To : Address</label>
+                        </div>
+
+                        <div class="md-form mt-3">
+                            <input type="text" id="financeToPhoneInput" name="to_phone" value="<%= to_phone %>" class="form-control"  required>
+                            <label for="financeToPhoneInput">To : Phone</label>
                         </div>
 
                         <div class="md-form mt-3">
@@ -1651,6 +1839,8 @@
                             <option value="" disabled>-- Payment Method --</option>
                             <option value="cheque" <% if(payment_method == "cheque"){%>selected <% }%> >Cheque</option>
                             <option value="cash" <% if(payment_method == "cash"){%>selected <% }%> >Cash</option>
+                            <option value="slip" <% if(payment_method == "slip"){%>selected <% }%> >Bank Slip</option>
+                            <option value="transfer" <% if(payment_method == "transfer"){%>selected <% }%> >Account Transfer</option>
                         </select>
 
                         <div class="md-form mt-3">
@@ -1697,6 +1887,20 @@
                         <td><a  data-toggle="modal" data-target="#fluidModalTopWarningDemo"><i class="fas fa-th-large mt-0"></i></a></td>
 	  </script>
     <!-- Title Row Template -->
+
+
+    <!-- Account Row For Dashboard Template -->
+    <script type="text/x-template" id="accountRowDashboardTemplate">
+
+    
+      <th scope="row"><%= serial_no %></th>
+      <td><%= name %></td><% var mul = exchange_rate * balance %>
+      <td  data-toggle="tooltip" data-placement="top" title="Equavalent MMK For <%= currency.name %>  in Exchange Rate (<%= exchange_rate %>) is <%= mul %> "><%= balance %>  <%= currency.name %></td>
+      <td><%= bank.name %></td>
+      <td><a  data-toggle="modal" data-target="#fluidModalTopWarningDemo"><i class="fas fa-th-large mt-0"></i></a></td>
+
+	  </script>
+    <!-- Account Row Template -->
 
 
 

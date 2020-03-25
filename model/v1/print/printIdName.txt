@@ -1,0 +1,11 @@
+invoiceNo
+invoiceDate
+fromName
+fromCompany
+fromIDAdd
+fromPhNo
+purposeOfPayment
+amount
+cash cheque accToAcc slip
+decription
+decription
