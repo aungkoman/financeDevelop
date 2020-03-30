@@ -4,7 +4,7 @@ $username = $_SERVER['HTTP_DB_USERNAME'];
 $password = $_SERVER['HTTP_DB_PASSWORD'];
 $db_name = $_SERVER['HTTP_DB_DBNAME'];
 R::setup( 'mysql:host='.$servername.';dbname='.$db_name.'', $username, $password ); # real db
-//R::freeze( TRUE ); // not to change db schema in runtime
+R::freeze( TRUE ); // not to change db schema in runtime
 // try{
 	
 // }catch(Exception $e){

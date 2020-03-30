@@ -769,6 +769,7 @@
                 tagName : "tr",
                 className : "",
                 events : {
+                  "click .list" : "list",
                 },
                 template: _.template( $('#accountRowDashboardTemplate').html() ),
                 initialize : function(){
@@ -787,6 +788,32 @@
                 change : function(){
                     console.log("AccountModel is changed : we're watching from AccountVieRowwDashboard");
                     this.render(); // update the ui
+                },
+                list : function(){
+                    console.log("AccountViewRowDashboard edit is clicked on "+this.model.get("name"));
+                    /*
+                      1.  get account_id
+                      2.  get set of finance that contain that account_id
+                      3.  render each finance row 
+                      4.  append to full modal list 
+                    */
+                   $("#listFinanceModalTable > tbody").empty();
+                    let account_id = this.model.get('id');
+                    let financeForAccount = Finances.where({account_id : account_id}); //Issues.where({status: 2});
+                    console.log("found finance "+financeForAccount.length);
+                    if(financeForAccount.length == 0 ){
+                      $("#listFinanceModalTable > tbody").append("<tr><td colspan='5'>There is no transaction for now</td></tr>");
+                    }
+                    for(let i = 0; i<financeForAccount.length; i++){
+                      let serialNo = i+1;
+                      financeForAccount[i].setSerialNo(serialNo);
+                      var financeForAccountView = new FinanceViewRow({model : financeForAccount[i]});
+                      $("#listFinanceModalTable > tbody").append(financeForAccountView.render().el);
+                    }
+                    //var financeForAccount = Finances.find
+                    // var accountEditView = new AccountViewRow({model : this.model});
+                    // $("#newAccountModal > div").html(accountEditView.render().el);
+                    // $('.mdb-select').materialSelect();
                 }
             });
 
@@ -1122,6 +1149,7 @@
                 tagName : "tr",
                 className : "",
                 events : {
+                  "click .list" : "list",
                 },
                 template: _.template( $('#titleRowDashboardTemplate').html() ),
                 initialize : function(){
@@ -1140,6 +1168,32 @@
                 change : function(){
                     console.log("TitleModel is changed : we're watching from TitleViewDashboard");
                     this.render(); // update the ui
+                },
+                list : function(){
+                    console.log("AccountViewRowDashboard edit is clicked on "+this.model.get("name"));
+                    /*
+                      1.  get title_id
+                      2.  get set of finance that contain that title_id
+                      3.  render each finance row 
+                      4.  append to full modal list 
+                    */
+                   $("#listFinanceModalTable > tbody").empty();
+                    let title_id = this.model.get('id');
+                    let financeForTitle = Finances.where({title_id : title_id}); //Issues.where({status: 2});
+                    console.log("found finance "+financeForTitle.length);
+                    if(financeForTitle.length == 0 ){
+                      $("#listFinanceModalTable > tbody").append("<tr><td colspan='5'>There is no transaction for now</td></tr>");
+                    }
+                    for(let i = 0; i<financeForTitle.length; i++){
+                      let serialNo = i+1;
+                      financeForTitle[i].setSerialNo(serialNo);
+                      var financeForTitleView = new FinanceViewRow({model : financeForTitle[i]});
+                      $("#listFinanceModalTable > tbody").append(financeForTitleView.render().el);
+                    }
+                    //var financeForAccount = Finances.find
+                    // var accountEditView = new AccountViewRow({model : this.model});
+                    // $("#newAccountModal > div").html(accountEditView.render().el);
+                    // $('.mdb-select').materialSelect();
                 }
             });
             var TitleViewEdit = Backbone.View.extend({
@@ -1287,6 +1341,7 @@
                       modified_date : null,
                       payment_method : null,
                       payment_data : null,
+                      case_file : null,
                       account_id: null,
                       title_id: null,
                       auth_id : null,
@@ -1317,7 +1372,8 @@
                 events : {
                     "click .edit" : "edit",
                     "click .delete" : "delete",
-                    "click .print" : "print"
+                    "click .print" : "print",
+                    "click .pdf" : "pdf"
                 },
                 template: _.template( $('#financeRowTemplate').html() ),
                 initialize : function(){
@@ -1447,6 +1503,9 @@
 
 
                 },
+                pdf : function(){
+                  console.log("pdf file is opened");
+                },
                 destroy : function(){
                     console.log("FinanceViewRow : FinanceModel is destroy");
                     this.remove(); // remove dom
@@ -1493,6 +1552,7 @@
 
                   // ajax part 2 : Data Manipulation
                   console.log("finance edit ajax is starting...");
+                  
                   var formdata = new FormData(); // how to get this form
                   var opsType = "insert";
                   var jwt = "thisIsJwt";
@@ -1517,6 +1577,20 @@
                   var financeToAddressInput = $("#financeToAddressInput").val();
                   var financeToPhoneInput = $("#financeToPhoneInput").val();
 
+                  /*
+                    Getting file data :
+                    var form = new FormData(); 
+                    form.append("video", $("#fileInput")[0].files[0]);
+                    Ref; https://stackoverflow.com/questions/12281775/get-data-from-file-input-in-jquery
+                  */
+                  
+                 var financeCaseFileInput = $("#financeCaseFileInput")[0].files[0];
+                 console.log("financeCaseFileInput is ");
+                 console.log(financeCaseFileInput);
+
+                //  var financeCaseFileInput2 = $("#financeCaseFileInput")[0].files[0];
+                //  console.log("financeCaseFileInput is ");
+                //  console.log(financeCaseFileInput);
 
                   // insert / update
                   if(financeIdInput == ""){
@@ -1567,6 +1641,8 @@
                   formdata.append("to_company", financeToCompanyInput);
                   formdata.append("to_address", financeToAddressInput);
                   formdata.append("to_phone", financeToPhoneInput);
+
+                  formdata.append("case_file", financeCaseFileInput);
 
                   // ajax part 3 : request
                   $.ajax({
@@ -1737,11 +1813,11 @@
               }
               if(currency == "USD"){
                 total_balance_usd += parseInt(data.balance);
-                $("#total_balance_usd").text("USD : "+total_balance_mmk);
+                $("#total_balance_usd").text("USD : "+total_balance_usd);
               }
               if(currency == "EURO"){
                 total_balance_euro += parseInt(data.balance);
-                $("#total_balance_euro").text("Euro : "+total_balance_mmk);
+                $("#total_balance_euro").text("Euro : "+total_balance_euro);
               }
 
             });
@@ -2180,12 +2256,16 @@
                   $("#profitAndLoseTable > tbody").empty();
                   if(response.status){
                     let serialNo = 1 ;
+                    if(response.data.length == 0 ) {
+                      $("#profitAndLoseTable > tbody").append("<tr><td colspan='4'>There is no data to calculate prfit and loss </td></tr>");
+                    }
                     for(let i = 0; i < response.data.length; i++){
                       let profitObj = response.data[i];
                       let titleModel = Titles.find(function(title){
                         return title.get('id') == profitObj.title_id;
                       })
                       $("#profitAndLoseTable > tbody").append("<tr><td>"+serialNo+"</td><td>"+titleModel.get("name")+"</td><td>"+profitObj.total_expense+"</td><td>"+profitObj.total_income+"</td><td>"+profitObj.status+"</td><td>"+profitObj.balance+"</td></tr>");
+                      serialNo++;
                     }
                     setTimeout(function(){
                       hideLoadingModal();
@@ -2253,12 +2333,16 @@
                   $("#balanceSheetTable > tbody").empty();
                   if(response.status){
                     let serialNo = 1 ;
+                    if(response.data.length == 0 ) {
+                      $("#balanceSheetTable > tbody").append("<tr><td colspan='4'>There is no data to calculate balance sheet</td></tr>");
+                    }
                     for(let i = 0; i < response.data.length; i++){
                       let balanceObj = response.data[i];
                       let titleModel = Titles.find(function(title){
                         return title.get('id') == balanceObj.title_id;
                       })
                       $("#balanceSheetTable > tbody").append("<tr><td>"+serialNo+"</td><td>"+titleModel.get("name")+"</td><td>"+balanceObj.total_expense+"</td><td>"+balanceObj.total_income+"</td><td>"+balanceObj.balance+"</td></tr>");
+                      serialNo++;
                     }
                     setTimeout(function(){
                       hideLoadingModal();
@@ -2281,6 +2365,12 @@
                 }
               });
 
+            });
+
+            console.log("dashboardForm ");
+            $("#dashboardForm").on('submit',function(e){
+              consoel.log("dashboardForm is submited");
+              e.preventDefault();
             });
 
             // 28. hash change
@@ -2529,7 +2619,7 @@
 
             /* socket section */
             socket.on('finance', (data) => {
-                console.log("finance is received from server");
+                console.log("SOCKET : finance is received from server");
                 console.log(data);
                 let msg = "New finance is added.";
                 /* discuss here how to parse finance */
@@ -2543,7 +2633,7 @@
                 var orgTitle = Titles.find(function(title){
                   return title.get("id") == data.title_id;
                 });
-                let msg = "Notification : ";
+                msg = "Notification : ";
                 if(orgData === undefined){
                   console.log("financeIdInput id cannot find id "+data.id);
                   msg += data.description+" is added";
@@ -2559,7 +2649,54 @@
 
                 // we have to update the balance 
                 // since income and expense is calculate via data
-                var currency = data.currency.name;
+                let currency = data.title.currency.name;
+              // update Balance
+              console.log("currency  "+currency);
+              if(currency == "MMK"){
+                total_balance_mmk += parseInt(data.amount);
+                $("#total_balance_mmk").text("MMK : "+total_balance_mmk);
+              }
+              if(currency == "USD"){
+                total_balance_usd += parseInt(data.amount);
+                $("#total_balance_usd").text("USD : "+total_balance_usd);
+              }
+              if(currency == "EURO"){
+                total_balance_euro += parseInt(data.amount);
+                $("#total_balance_euro").text("Euro : "+total_balance_euro);
+              }
+
+                // console.log("currency and ops from socket data is "+currency+" and "+ops);
+                // if(currency == "MMK"){
+                //   if(ops == "income"){
+                //     total_income_mmk += parseInt(data.amount);
+                //     $("#total_income_mmk").text("MMK : "+total_income_mmk);
+                //   }
+                //   if(ops == "expense"){
+                //     total_expense_mmk += parseInt(data.amount);
+                //     $("#total_expense_mmk").text("MMK : "+total_expense_mmk);
+                //   }
+                // }
+                // if(currency == "USD"){
+                //   if(ops == "income"){
+                //     total_income_usd += parseInt(data.amount);
+                //     $("#total_income_usd").text("USD : "+total_income_usd);
+                //   }
+                //   if(ops == "expense"){
+                //     total_expense_usd += parseInt(data.amount);
+                //     $("#total_expense_usd").text("USD : "+total_expense_usd);
+                //   }
+                // }
+                // if(currency == "EURO"){
+                //   //alert("here is euro");
+                //   if(ops == "income"){
+                //     total_income_euro += parseInt(data.amount);
+                //     $("#total_income_euro").text("Euro : "+total_income_euro);
+                //   }
+                //   if(ops == "expense"){
+                //     total_expense_euro += parseInt(data.amount);
+                //     $("#total_expense_euro").text("Euro : "+total_expense_euro);
+                //   }
+                // }
                 
             });
               

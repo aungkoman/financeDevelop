@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>MEHCPL Finance</title>
+    <link rel="apple-touch-icon" href="img/logo.png">
+    <link rel="shortcut icon" href="img/logo.png">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="css/all.css">
   <!-- Bootstrap core CSS -->
@@ -147,7 +149,7 @@
                   class="w-fa fas fa-tachometer-alt"></i>Trial</a>
             </li>
             <li>
-              <a href="#profitAndLoseSection" class="collapsible-header waves-effect"><i
+              <a href="#profitAndLossSection" class="collapsible-header waves-effect"><i
                   class="w-fa fas fa-tachometer-alt"></i>Profit and Balance</a>
             </li>
             <li>
@@ -268,7 +270,6 @@
     
       <!-- Section: Dashboard -->
       <section id="dashboardSection">
-
         <!-- Report Cards-->
         <!-- Grid row -->
         <div class="row">
@@ -887,6 +888,7 @@
                         <th>Auth</th>
                         <th>Edit</th>
                         <th>Print</th>
+                        <th>File</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
@@ -1009,14 +1011,14 @@
       <!-- Section: Trail Section -->
 
 
-      <!-- Section: Profit and Lose  Section -->
-      <section id="profitAndLoseSection">
+      <!-- Section: Profit and loss Section -->
+      <section id="profitAndLossSection">
 
         <!-- Card -->
         <div class="card" style="padding:50px">
             <div class="card-body">
             
-            <h4>Profit and Lose Section</h4>
+            <h4>Profit and lossSection</h4>
             
                 <form id="profitAndloseCalculateForm" action="#">
 
@@ -1071,7 +1073,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                      <td colspan="6">Choose start date and end date to calculate profit and lose </td>
+                      <td colspan="6">Choose start date and end date to calculate profit and loss</td>
                     </tr>
                 </tbody>
             </table>
@@ -1080,7 +1082,7 @@
         <!-- Card -->
 
       </section>
-      <!-- Section: Profit and Lose Section -->
+      <!-- Section: Profit and lossSection -->
 
 
       <!-- Section: Balance Sheet  Section -->
@@ -1153,7 +1155,7 @@
         <!-- Card -->
 
       </section>
-      <!-- Section: Profit and Lose Section -->
+      <!-- Section: Profit and lossSection -->
 
 
     </div>
@@ -1187,7 +1189,7 @@
             <div class="modal-content">
               <!-- Header -->
               <div class="modal-header">
-                <p class="heading lead">Account 2000 10000 139 570 : MWD Bank : USD</p>
+                <p class="heading lead">Finance List</p>
 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true" class="white-text">&times;</span>
@@ -1199,18 +1201,27 @@
                 <div class="text-center">
                   <i class="fas fa-cash fa-4x mb-3 animated rotateIn"></i>
                 </div>
-                <table class="table">
+                <table class="table" id="listFinanceModalTable">
                   <thead>
                     <tr>
-                      <th>No</th>
-                      <th>Description</th>
-                      <th>Amount</th>
-                      <th>Income/Expense</th>
-                      <th>Date</th>
+                        <th>No</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Ops</th>
+                        <th>Title</th>
+                        <th>Account</th>
+                        <th>Created Date</th>
+                        <th>Payment Method</th>
+                        <th>Payment Data</th>
+                        <th>Auth</th>
+                        <th>Edit</th>
+                        <th>Print</th>
+                        <th>Pdf</th>
+                        <th>Delete</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                    <!--tr>
                       <td>1</td>
                       <td>No(73) Factory Profit for Jan 2019</td>
                       <td>232,000</td>
@@ -1279,7 +1290,7 @@
                       <td>332,000</td>
                       <td>Income</td>
                       <td>2020-03-12</td>
-                    </tr>
+                    </tr-->
                   </tbody>
                 </table>
               </div>
@@ -1718,6 +1729,7 @@
                         <td><%= auth.name %></td>
                         <td><a data-toggle="modal" data-target="#newFinanceModal" ><i class="fas fa-edit color-blue edit"></i></a></td>
                         <td><a><i class="fas fa-print color-blue print"></i></a></td>
+                        <td><a href="../../upload/<%= case_file %>" target="_blank"><i class="fas fa-file-pdf color-blue pdf"></i></a></td>
                         <td><a><i class="fas fa-trash color-red delete"></i></a></td>
 	  </script>
     <!-- Finance Row Template -->
@@ -1847,6 +1859,11 @@
                             <input type="text" id="financePaymentDataInput" name="payment_data" value="<%= payment_data %>" class="form-control"  required>
                             <label for="financePaymentDataInput">Payment Data</label>
                         </div>
+
+                        <div class="md-form mt-3">
+                            <input type="file" id="financeCaseFileInput" name="case_file" value="<%= case_file %>" class="form-control"  accept="application/pdf"  required>
+                            <!--label for="financeCaseFileInput">Case File</label-->
+                        </div>
                         
                         <select class="mdb-select colorful-select dropdown-primary md-form" id="financeAuthSelect" required name="auth">
                             <option value="" disabled>-- Auth --</option>
@@ -1884,7 +1901,7 @@
                         <td  data-toggle="tooltip" data-placement="top" title="Equavalent MMK For <%= currency.name %>  in Exchange Rate (<%= exchange_rate %>) is <%= total_income_in_mmk %> "><%= total_income %></td>
                         <td  data-toggle="tooltip" data-placement="top" title="Equavalent MMK For <%= currency.name %>  in Exchange Rate (<%= exchange_rate %>) is <%= total_expense_in_mmk %> "><%= total_expense %></td>
                         <td><%= currency.name %></td>
-                        <td><a  data-toggle="modal" data-target="#fluidModalTopWarningDemo"><i class="fas fa-th-large mt-0"></i></a></td>
+                        <td><a class="list"  data-toggle="modal" data-target="#fluidModalTopWarningDemo"><i class="fas fa-th-large mt-0"></i></a></td>
 	  </script>
     <!-- Title Row Template -->
 
@@ -1897,7 +1914,7 @@
       <td><%= name %></td><% var mul = exchange_rate * balance %>
       <td  data-toggle="tooltip" data-placement="top" title="Equavalent MMK For <%= currency.name %>  in Exchange Rate (<%= exchange_rate %>) is <%= mul %> "><%= balance %>  <%= currency.name %></td>
       <td><%= bank.name %></td>
-      <td><a  data-toggle="modal" data-target="#fluidModalTopWarningDemo"><i class="fas fa-th-large mt-0"></i></a></td>
+      <td><a class="list"  data-toggle="modal" data-target="#fluidModalTopWarningDemo"><i class="fas fa-th-large mt-0"></i></a></td>
 
 	  </script>
     <!-- Account Row Template -->

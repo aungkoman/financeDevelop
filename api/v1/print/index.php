@@ -27,7 +27,7 @@
 
 		$from_company = isset($finance['from_company']) ? sanitize_str($finance['from_company'],"print : from_company ") : return_fail('print : from_company is not defined in requested data');
 
-		$from_address = isset($finance['from_address']) ? sanitize_str($finance['from_name'],"print : from_name ") : return_fail('print : from_address is not defined in requested data');
+		$from_address = isset($finance['from_address']) ? sanitize_str($finance['from_address'],"print : from_address ") : return_fail('print : from_address is not defined in requested data');
 
 		$from_phone = isset($finance['from_phone']) ? sanitize_str($finance['from_phone'],"print : from_phone ") : return_fail('print : from_phone is not defined in requested data');
 
@@ -35,7 +35,7 @@
 
 		$to_company = isset($finance['to_company']) ? sanitize_str($finance['to_company'],"print : to_company ") : return_fail('print : to_company is not defined in requested data');
 
-		$to_address = isset($finance['to_address']) ? sanitize_str($finance['to_name'],"print : to_name ") : return_fail('print : to_address is not defined in requested data');
+		$to_address = isset($finance['to_address']) ? sanitize_str($finance['to_address'],"print : to_address ") : return_fail('print : to_address is not defined in requested data');
 
 		$to_phone = isset($finance['to_phone']) ? sanitize_str($finance['to_phone'],"print : to_phone ") : return_fail('print : to_phone is not defined in requested data');
 

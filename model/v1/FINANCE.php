@@ -125,6 +125,9 @@ class FINANCE{
 
                 // 21. To : Phone
                 $this->finance->to_phone = (string) isset($data['to_phone']) ? sanitize_str($data['to_phone'],"finance->insert : to_phone") :  return_fail('finance->insert : to_phone is not defined in requested data');
+
+                // 22. Case File Name
+                $this->finance->case_file = (string) isset($data['case_file']) ? sanitize_str($data['case_file'],"finance->insert : case_file") :  return_fail('finance->insert : case_file is not defined in requested data');
                 
                 R::begin(); // start the transaction 
                 try{
